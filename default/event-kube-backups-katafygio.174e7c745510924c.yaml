@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:35:50Z"
+deprecatedLastTimestamp: "2023-03-21T16:35:50Z"
+deprecatedSource:
+  component: deployment-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:35:50Z"
+  name: kube-backups-katafygio.174e7c745510924c
+  namespace: default
+note: Scaled up replica set kube-backups-katafygio-5b77fc7d67 to 1
+reason: ScalingReplicaSet
+regarding:
+  apiVersion: apps/v1
+  kind: Deployment
+  name: kube-backups-katafygio
+  namespace: default
+  resourceVersion: "14470"
+  uid: 32b09ca6-74ae-48f9-a555-88e2c909a6aa
+type: Normal

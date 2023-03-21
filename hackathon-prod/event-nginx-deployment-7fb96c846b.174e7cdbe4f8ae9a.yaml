@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:43:14Z"
+deprecatedLastTimestamp: "2023-03-21T16:43:14Z"
+deprecatedSource:
+  component: replicaset-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:43:14Z"
+  name: nginx-deployment-7fb96c846b.174e7cdbe4f8ae9a
+  namespace: hackathon-prod
+note: 'Deleted pod: nginx-deployment-7fb96c846b-8ftp6'
+reason: SuccessfulDelete
+regarding:
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  name: nginx-deployment-7fb96c846b
+  namespace: hackathon-prod
+  resourceVersion: "15725"
+  uid: 4cb3fa2b-2cc4-4443-a57c-76992c2f4a8a
+type: Normal

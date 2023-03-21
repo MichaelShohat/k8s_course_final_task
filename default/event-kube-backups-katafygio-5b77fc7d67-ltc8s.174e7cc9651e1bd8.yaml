@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:41:55Z"
+deprecatedLastTimestamp: "2023-03-21T16:41:55Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:41:55Z"
+  name: kube-backups-katafygio-5b77fc7d67-ltc8s.174e7cc9651e1bd8
+  namespace: default
+note: Stopping container katafygio
+reason: Killing
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{katafygio}
+  kind: Pod
+  name: kube-backups-katafygio-5b77fc7d67-ltc8s
+  namespace: default
+  resourceVersion: "14475"
+  uid: dd71e378-5851-40bc-8238-b2250504e2f4
+type: Normal

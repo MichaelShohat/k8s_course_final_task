@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:41:59Z"
+deprecatedLastTimestamp: "2023-03-21T16:41:59Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:41:59Z"
+  name: kube-backups-katafygio-5b77fc7d67-w7n4l.174e7cca375af89b
+  namespace: default
+note: Created container katafygio
+reason: Created
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{katafygio}
+  kind: Pod
+  name: kube-backups-katafygio-5b77fc7d67-w7n4l
+  namespace: default
+  resourceVersion: "15506"
+  uid: 8dec491f-b969-435f-b2f8-80609f406c10
+type: Normal
