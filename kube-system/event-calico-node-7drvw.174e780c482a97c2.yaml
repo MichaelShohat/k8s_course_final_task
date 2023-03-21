@@ -1,0 +1,25 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:15:05Z"
+deprecatedLastTimestamp: "2023-03-21T15:15:05Z"
+deprecatedSource:
+  component: kubelet
+  host: i-0818197f5dee720c3
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:15:05Z"
+  name: calico-node-7drvw.174e780c482a97c2
+  namespace: kube-system
+note: |
+  Readiness probe failed: calico/node is not ready: felix is not ready: Get "http://localhost:9099/readiness": dial tcp 127.0.0.1:9099: connect: connection refused
+reason: Unhealthy
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{calico-node}
+  kind: Pod
+  name: calico-node-7drvw
+  namespace: kube-system
+  resourceVersion: "537"
+  uid: f23142f6-d56a-4414-9d42-6608e1d9529b
+type: Warning

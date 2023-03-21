@@ -1,0 +1,56 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: "2023-03-21T15:14:04Z"
+  labels:
+    addon.kops.k8s.io/name: aws-ebs-csi-driver.addons.k8s.io
+    app.kubernetes.io/instance: aws-ebs-csi-driver
+    app.kubernetes.io/managed-by: kops
+    app.kubernetes.io/name: aws-ebs-csi-driver
+    app.kubernetes.io/version: v1.8.0
+    k8s-addon: aws-ebs-csi-driver.addons.k8s.io
+  name: ebs-external-snapshotter-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - list
+  - watch
+  - create
+  - update
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshotclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshotcontents
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - delete
+  - patch
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshotcontents/status
+  verbs:
+  - update

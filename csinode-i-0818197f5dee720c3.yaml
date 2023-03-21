@@ -1,0 +1,20 @@
+apiVersion: storage.k8s.io/v1
+kind: CSINode
+metadata:
+  annotations:
+    storage.alpha.kubernetes.io/migrated-plugins: kubernetes.io/aws-ebs,kubernetes.io/azure-disk,kubernetes.io/azure-file,kubernetes.io/cinder,kubernetes.io/gce-pd,kubernetes.io/vsphere-volume
+  creationTimestamp: "2023-03-21T15:13:52Z"
+  name: i-0818197f5dee720c3
+  ownerReferences:
+  - apiVersion: v1
+    kind: Node
+    name: i-0818197f5dee720c3
+    uid: 33d20ce5-0818-4168-9025-b9df05ee122d
+spec:
+  drivers:
+  - allocatable:
+      count: 24
+    name: ebs.csi.aws.com
+    nodeID: i-0818197f5dee720c3
+    topologyKeys:
+    - topology.ebs.csi.aws.com/zone

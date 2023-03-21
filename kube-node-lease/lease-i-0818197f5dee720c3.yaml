@@ -1,0 +1,15 @@
+apiVersion: coordination.k8s.io/v1
+kind: Lease
+metadata:
+  creationTimestamp: "2023-03-21T15:14:02Z"
+  name: i-0818197f5dee720c3
+  namespace: kube-node-lease
+  ownerReferences:
+  - apiVersion: v1
+    kind: Node
+    name: i-0818197f5dee720c3
+    uid: 33d20ce5-0818-4168-9025-b9df05ee122d
+spec:
+  holderIdentity: i-0818197f5dee720c3
+  leaseDurationSeconds: 40
+  renewTime: "2023-03-21T16:13:10.454171Z"

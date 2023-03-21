@@ -1,0 +1,193 @@
+apiVersion: crd.projectcalico.org/v1
+kind: IPAMBlock
+metadata:
+  annotations:
+    projectcalico.org/metadata: '{"creationTimestamp":null}'
+  creationTimestamp: "2023-03-21T15:16:09Z"
+  name: 100-113-130-64-26
+spec:
+  affinity: host:i-001ee1bdf967ddcca
+  allocations:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  attributes:
+  - handle_id: ipip-tunnel-addr-i-001ee1bdf967ddcca
+    secondary:
+      node: i-001ee1bdf967ddcca
+      type: ipipTunnelAddress
+  - handle_id: k8s-pod-network.b4ccaf3be04991ca5fcbf59424acf3846b9fd86c8474f8d1328390d9c3e1b199
+    secondary:
+      namespace: kube-system
+      node: i-001ee1bdf967ddcca
+      pod: coredns-autoscaler-975545559-77gtp
+      timestamp: 2023-03-21 15:16:17.744655828 +0000 UTC
+  - handle_id: k8s-pod-network.2b3350ea561b218f202d435b44ede98b67b3076e4dc8bce732653f5f1ec0ccad
+    secondary:
+      namespace: kube-system
+      node: i-001ee1bdf967ddcca
+      pod: ebs-csi-node-jnmvw
+      timestamp: 2023-03-21 15:16:17.7853262 +0000 UTC
+  - handle_id: k8s-pod-network.d608c4b668d2235362f650f74974201cc18e452f8ef495056a3ddbf5a4789ddf
+    secondary:
+      namespace: kube-system
+      node: i-001ee1bdf967ddcca
+      pod: coredns-5687f9bc7f-bpxq7
+      timestamp: 2023-03-21 15:16:19.801318479 +0000 UTC
+  - handle_id: k8s-pod-network.96621f680af69f214bbe1548f918425bdd0c114c9533d874f8d101c15ad8874d
+    secondary:
+      namespace: kube-system
+      node: i-001ee1bdf967ddcca
+      pod: coredns-5687f9bc7f-zcm6v
+      timestamp: 2023-03-21 15:16:24.077044238 +0000 UTC
+  - handle_id: k8s-pod-network.c29d407a7c7be276c51c8393e10bfc7b64baacba0326e9e410017ee855859c93
+    secondary:
+      namespace: hackathon-prod
+      node: i-001ee1bdf967ddcca
+      pod: nginx-deployment-7fb96c846b-8ftp6
+      timestamp: 2023-03-21 15:49:08.767103012 +0000 UTC
+  - handle_id: k8s-pod-network.6870e3222c7ef316b8bfd0aade213ace45dee73895ac0d4b8b2f8eb9bd223ba7
+    secondary:
+      namespace: hackathon-prod
+      node: i-001ee1bdf967ddcca
+      pod: nginx-deployment-7fb96c846b-hftpl
+      timestamp: 2023-03-21 15:49:09.016469469 +0000 UTC
+  - handle_id: k8s-pod-network.faa5aec5db09dbe360df0533f7249d80b26e4d343d62d412ca4809b0406049fc
+    secondary:
+      namespace: hackathon-prod
+      node: i-001ee1bdf967ddcca
+      pod: nginx-deployment-7fb96c846b-gds8c
+      timestamp: 2023-03-21 15:49:09.049419865 +0000 UTC
+  cidr: 100.113.130.64/26
+  deleted: false
+  sequenceNumber: 1679411769556053894
+  sequenceNumberForAllocation:
+    "0": 1679411769556053882
+    "1": 1679411769556053883
+    "2": 1679411769556053884
+    "3": 1679411769556053885
+    "4": 1679411769556053886
+    "5": 1679411769556053887
+    "6": 1679411769556053888
+    "7": 1679411769556053889
+    "8": 1679411769556053890
+    "9": 1679411769556053892
+  strictAffinity: false
+  unallocated:
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 8
+  - 9

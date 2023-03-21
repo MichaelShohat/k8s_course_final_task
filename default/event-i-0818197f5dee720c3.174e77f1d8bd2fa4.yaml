@@ -1,0 +1,20 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:13:11Z"
+deprecatedLastTimestamp: "2023-03-21T15:13:11Z"
+deprecatedSource:
+  component: kubelet
+  host: i-0818197f5dee720c3
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:13:53Z"
+  name: i-0818197f5dee720c3.174e77f1d8bd2fa4
+  namespace: default
+note: Updated Node Allocatable limit across pods
+reason: NodeAllocatableEnforced
+regarding:
+  kind: Node
+  name: i-0818197f5dee720c3
+  uid: i-0818197f5dee720c3
+type: Normal

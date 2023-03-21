@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+    deployment.kubernetes.io/desired-replicas: "1"
+    deployment.kubernetes.io/max-replicas: "2"
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  labels:
+    k8s-app: coredns-autoscaler
+    kops.k8s.io/managed-by: kops
+    pod-template-hash: "975545559"
+  name: coredns-autoscaler-975545559
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Deployment
+    name: coredns-autoscaler
+    uid: 2c057fa4-2b12-48af-a57e-508fb4cbc635
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: coredns-autoscaler
+      pod-template-hash: "975545559"
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        k8s-app: coredns-autoscaler
+        kops.k8s.io/managed-by: kops
+        pod-template-hash: "975545559"
+    spec:
+      containers:
+      - command:
+        - /cluster-proportional-autoscaler
+        - --namespace=kube-system
+        - --configmap=coredns-autoscaler
+        - --target=Deployment/coredns
+        - --default-params={"linear":{"coresPerReplica":256,"nodesPerReplica":16,"preventSinglePointFailure":true}}
+        - --logtostderr=true
+        - --v=2
+        image: registry.k8s.io/cpa/cluster-proportional-autoscaler:1.8.5@sha256:aa60f453d64dfb3c3fd9e7306f988c36c6352c4f2d956aa90467f2808091effa
+        imagePullPolicy: IfNotPresent
+        name: autoscaler
+        resources:
+          requests:
+            cpu: 20m
+            memory: 10Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        kubernetes.io/os: linux
+      priorityClassName: system-cluster-critical
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: coredns-autoscaler
+      serviceAccountName: coredns-autoscaler
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Exists

@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: "2023-03-21T15:14:05Z"
+  labels:
+    addon.kops.k8s.io/name: kops-controller.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: kops-controller.addons.k8s.io
+  name: kops-controller
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kops-controller
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:serviceaccount:kube-system:kops-controller

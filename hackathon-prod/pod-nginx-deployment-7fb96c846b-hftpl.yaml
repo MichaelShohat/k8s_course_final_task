@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 6870e3222c7ef316b8bfd0aade213ace45dee73895ac0d4b8b2f8eb9bd223ba7
+    cni.projectcalico.org/podIP: 100.113.130.70/32
+    cni.projectcalico.org/podIPs: 100.113.130.70/32
+  creationTimestamp: "2023-03-21T15:49:08Z"
+  generateName: nginx-deployment-7fb96c846b-
+  labels:
+    app: nginx
+    pod-template-hash: 7fb96c846b
+  name: nginx-deployment-7fb96c846b-hftpl
+  namespace: hackathon-prod
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: nginx-deployment-7fb96c846b
+    uid: 4cb3fa2b-2cc4-4443-a57c-76992c2f4a8a
+spec:
+  containers:
+  - image: nginx:1.14.2
+    imagePullPolicy: IfNotPresent
+    name: nginx
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-ffg45
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: i-001ee1bdf967ddcca
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-ffg45
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace

@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 3
+deprecatedFirstTimestamp: "2023-03-21T15:13:15Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:24Z"
+deprecatedSource:
+  component: kubelet
+  host: i-0818197f5dee720c3
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:13:58Z"
+  name: kube-controller-manager-i-0818197f5dee720c3.174e77f2cad7fb2b
+  namespace: kube-system
+note: Container image "registry.k8s.io/kube-controller-manager:v1.25.4@sha256:2526315b1c01899eab8b0fb81046083e4571d94433b293f9db124d091df98707"
+  already present on machine
+reason: Pulled
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{kube-controller-manager}
+  kind: Pod
+  name: kube-controller-manager-i-0818197f5dee720c3
+  namespace: kube-system
+  uid: 580706aa3c92133d8466ed9dd640ea40
+type: Normal

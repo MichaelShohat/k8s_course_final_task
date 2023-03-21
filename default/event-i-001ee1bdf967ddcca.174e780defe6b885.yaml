@@ -1,0 +1,21 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:15:12Z"
+deprecatedLastTimestamp: "2023-03-21T15:15:12Z"
+deprecatedSource:
+  component: cloud-node-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:15:12Z"
+  name: i-001ee1bdf967ddcca.174e780defe6b885
+  namespace: default
+note: Node synced successfully
+reason: Synced
+regarding:
+  apiVersion: v1
+  kind: Node
+  name: i-001ee1bdf967ddcca
+  resourceVersion: "674"
+  uid: a012f8e3-0f1d-49a7-a6a3-5b9cc0c6c52c
+type: Normal

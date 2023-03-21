@@ -1,0 +1,25 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:16:22Z"
+deprecatedLastTimestamp: "2023-03-21T15:16:22Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:16:22Z"
+  name: coredns-autoscaler-975545559-77gtp.174e781e5a0186c4
+  namespace: kube-system
+note: Successfully pulled image "registry.k8s.io/cpa/cluster-proportional-autoscaler:1.8.5@sha256:aa60f453d64dfb3c3fd9e7306f988c36c6352c4f2d956aa90467f2808091effa"
+  in 4.534852217s
+reason: Pulled
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{autoscaler}
+  kind: Pod
+  name: coredns-autoscaler-975545559-77gtp
+  namespace: kube-system
+  resourceVersion: "858"
+  uid: 6047c2be-ecda-4015-9a4c-33a8711ab734
+type: Normal

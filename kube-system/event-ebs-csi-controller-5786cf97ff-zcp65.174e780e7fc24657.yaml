@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:15:14Z"
+deprecatedLastTimestamp: "2023-03-21T15:15:14Z"
+deprecatedSource:
+  component: kubelet
+  host: i-0818197f5dee720c3
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:15:14Z"
+  name: ebs-csi-controller-5786cf97ff-zcp65.174e780e7fc24657
+  namespace: kube-system
+note: Pulling image "registry.k8s.io/sig-storage/csi-resizer:v1.4.0@sha256:9ebbf9f023e7b41ccee3d52afe39a89e3ddacdbb69269d583abfc25847cfd9e4"
+reason: Pulling
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{csi-resizer}
+  kind: Pod
+  name: ebs-csi-controller-5786cf97ff-zcp65
+  namespace: kube-system
+  resourceVersion: "525"
+  uid: 2abcbb4a-51f6-4a23-b753-172ea3c63d5b
+type: Normal

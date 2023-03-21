@@ -1,0 +1,23 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:15:06Z"
+deprecatedLastTimestamp: "2023-03-21T15:15:06Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:15:13Z"
+  name: kube-proxy-i-001ee1bdf967ddcca.174e780c96f1aac2
+  namespace: kube-system
+note: Started container kube-proxy
+reason: Started
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{kube-proxy}
+  kind: Pod
+  name: kube-proxy-i-001ee1bdf967ddcca
+  namespace: kube-system
+  uid: 965c7eee449f6dcabd15429708f9b65d
+type: Normal

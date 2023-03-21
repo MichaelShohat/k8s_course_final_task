@@ -1,0 +1,15 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  creationTimestamp: "2023-03-21T15:13:58Z"
+  labels:
+    addon.kops.k8s.io/name: coredns.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: coredns.addons.k8s.io
+  name: kube-dns
+  namespace: kube-system
+spec:
+  maxUnavailable: 50%
+  selector:
+    matchLabels:
+      k8s-app: kube-dns

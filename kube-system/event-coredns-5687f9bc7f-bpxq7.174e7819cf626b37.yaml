@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:16:03Z"
+deprecatedLastTimestamp: "2023-03-21T15:16:03Z"
+deprecatedSource:
+  component: default-scheduler
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:16:03Z"
+  name: coredns-5687f9bc7f-bpxq7.174e7819cf626b37
+  namespace: kube-system
+note: Successfully assigned kube-system/coredns-5687f9bc7f-bpxq7 to i-001ee1bdf967ddcca
+reason: Scheduled
+regarding:
+  apiVersion: v1
+  kind: Pod
+  name: coredns-5687f9bc7f-bpxq7
+  namespace: kube-system
+  resourceVersion: "522"
+  uid: d666d7bc-1bb1-45af-b3ae-4c27a65e436b
+type: Normal

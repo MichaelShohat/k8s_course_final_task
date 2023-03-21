@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
+deprecatedSource:
+  component: replicaset-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: ebs-csi-controller-5786cf97ff.174e780652d1cdf0
+  namespace: kube-system
+note: 'Created pod: ebs-csi-controller-5786cf97ff-zcp65'
+reason: SuccessfulCreate
+regarding:
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  name: ebs-csi-controller-5786cf97ff
+  namespace: kube-system
+  resourceVersion: "484"
+  uid: 6d321b22-fe24-4047-930e-bb259d6f9d80
+type: Normal

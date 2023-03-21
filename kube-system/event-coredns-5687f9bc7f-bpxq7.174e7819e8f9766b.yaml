@@ -1,0 +1,19 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:16:03Z"
+deprecatedLastTimestamp: "2023-03-21T15:16:03Z"
+deprecatedSource:
+  component: taint-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:16:03Z"
+  name: coredns-5687f9bc7f-bpxq7.174e7819e8f9766b
+  namespace: kube-system
+note: Cancelling deletion of Pod kube-system/coredns-5687f9bc7f-bpxq7
+reason: TaintManagerEviction
+regarding:
+  kind: Pod
+  name: coredns-5687f9bc7f-bpxq7
+  namespace: kube-system
+type: Normal

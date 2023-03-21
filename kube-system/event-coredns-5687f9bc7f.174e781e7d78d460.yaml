@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:16:23Z"
+deprecatedLastTimestamp: "2023-03-21T15:16:23Z"
+deprecatedSource:
+  component: replicaset-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:16:23Z"
+  name: coredns-5687f9bc7f.174e781e7d78d460
+  namespace: kube-system
+note: 'Created pod: coredns-5687f9bc7f-zcm6v'
+reason: SuccessfulCreate
+regarding:
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  name: coredns-5687f9bc7f
+  namespace: kube-system
+  resourceVersion: "941"
+  uid: c3160d9d-66ee-4a7d-bb20-ff640043b4b1
+type: Normal

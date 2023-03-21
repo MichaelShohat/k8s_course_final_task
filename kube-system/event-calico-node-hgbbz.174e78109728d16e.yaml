@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 2
+deprecatedFirstTimestamp: "2023-03-21T15:15:23Z"
+deprecatedLastTimestamp: "2023-03-21T15:15:56Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:15:23Z"
+  name: calico-node-hgbbz.174e78109728d16e
+  namespace: kube-system
+note: Created container install-cni
+reason: Created
+regarding:
+  apiVersion: v1
+  fieldPath: spec.initContainers{install-cni}
+  kind: Pod
+  name: calico-node-hgbbz
+  namespace: kube-system
+  resourceVersion: "685"
+  uid: c6cb944c-db27-49ed-b86d-cb046a7431b4
+type: Normal

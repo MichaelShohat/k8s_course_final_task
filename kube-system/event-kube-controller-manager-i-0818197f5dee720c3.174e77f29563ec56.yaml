@@ -1,0 +1,23 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 4
+deprecatedFirstTimestamp: "2023-03-21T15:13:14Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:24Z"
+deprecatedSource:
+  component: kubelet
+  host: i-0818197f5dee720c3
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:13:58Z"
+  name: kube-controller-manager-i-0818197f5dee720c3.174e77f29563ec56
+  namespace: kube-system
+note: Created container kube-controller-manager
+reason: Created
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{kube-controller-manager}
+  kind: Pod
+  name: kube-controller-manager-i-0818197f5dee720c3
+  namespace: kube-system
+  uid: 580706aa3c92133d8466ed9dd640ea40
+type: Normal

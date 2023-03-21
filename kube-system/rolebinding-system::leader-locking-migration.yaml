@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: "2023-03-21T15:13:59Z"
+  labels:
+    addon.kops.k8s.io/name: leader-migration.rbac.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: leader-migration.rbac.addons.k8s.io
+  name: system::leader-locking-migration
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: system::leader-locking-migration
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:kube-controller-manager
+- kind: ServiceAccount
+  name: kube-controller-manager
+  namespace: kube-system
+- kind: ServiceAccount
+  name: aws-cloud-controller-manager
+  namespace: kube-system
+- kind: ServiceAccount
+  name: cloud-controller-manager
+  namespace: kube-system

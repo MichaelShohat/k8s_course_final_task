@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
+deprecatedSource:
+  component: deployment-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: dns-controller.174e780646b2cbc2
+  namespace: kube-system
+note: Scaled up replica set dns-controller-757cbb666b to 1
+reason: ScalingReplicaSet
+regarding:
+  apiVersion: apps/v1
+  kind: Deployment
+  name: dns-controller
+  namespace: kube-system
+  resourceVersion: "318"
+  uid: b62e93a7-7c80-4c46-a368-19db83a5d56d
+type: Normal

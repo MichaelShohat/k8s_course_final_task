@@ -1,0 +1,25 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:14:53Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:53Z"
+deprecatedSource:
+  component: kubelet
+  host: i-0818197f5dee720c3
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:14:53Z"
+  name: calico-node-7drvw.174e78097381f2dc
+  namespace: kube-system
+note: Container image "docker.io/calico/cni:v3.24.1@sha256:e60b90d7861e872efa720ead575008bc6eca7bee41656735dcaa8210b688fcd9"
+  already present on machine
+reason: Pulled
+regarding:
+  apiVersion: v1
+  fieldPath: spec.initContainers{install-cni}
+  kind: Pod
+  name: calico-node-7drvw
+  namespace: kube-system
+  resourceVersion: "537"
+  uid: f23142f6-d56a-4414-9d42-6608e1d9529b
+type: Normal

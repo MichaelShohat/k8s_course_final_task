@@ -1,0 +1,188 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/config.hash: 580706aa3c92133d8466ed9dd640ea40
+    kubernetes.io/config.mirror: 580706aa3c92133d8466ed9dd640ea40
+    kubernetes.io/config.seen: "2023-03-21T15:13:11.071726744Z"
+    kubernetes.io/config.source: file
+  creationTimestamp: "2023-03-21T15:13:56Z"
+  labels:
+    k8s-app: kube-controller-manager
+  name: kube-controller-manager-i-0818197f5dee720c3
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: v1
+    controller: true
+    kind: Node
+    name: i-0818197f5dee720c3
+    uid: 33d20ce5-0818-4168-9025-b9df05ee122d
+spec:
+  containers:
+  - args:
+    - --log-file=/var/log/kube-controller-manager.log
+    - --also-stdout
+    - /usr/local/bin/kube-controller-manager
+    - --allocate-node-cidrs=true
+    - --attach-detach-reconcile-sync-period=1m0s
+    - --authentication-kubeconfig=/var/lib/kube-controller-manager/kubeconfig
+    - --authorization-kubeconfig=/var/lib/kube-controller-manager/kubeconfig
+    - --cloud-config=/etc/kubernetes/in-tree-cloud.config
+    - --cloud-provider=external
+    - --cluster-cidr=100.96.0.0/11
+    - --cluster-name=newstuffa-8.jb.io
+    - --cluster-signing-cert-file=/srv/kubernetes/kube-controller-manager/ca.crt
+    - --cluster-signing-key-file=/srv/kubernetes/kube-controller-manager/ca.key
+    - --configure-cloud-routes=false
+    - --feature-gates=CSIMigrationAWS=true,InTreePluginAWSUnregister=true
+    - --flex-volume-plugin-dir=/usr/libexec/kubernetes/kubelet-plugins/volume/exec/
+    - --kubeconfig=/var/lib/kube-controller-manager/kubeconfig
+    - --leader-elect=true
+    - --root-ca-file=/srv/kubernetes/ca.crt
+    - --service-account-private-key-file=/srv/kubernetes/kube-controller-manager/service-account.key
+    - --tls-cert-file=/srv/kubernetes/kube-controller-manager/server.crt
+    - --tls-private-key-file=/srv/kubernetes/kube-controller-manager/server.key
+    - --use-service-account-credentials=true
+    - --v=2
+    command:
+    - /go-runner
+    image: registry.k8s.io/kube-controller-manager:v1.25.4@sha256:2526315b1c01899eab8b0fb81046083e4571d94433b293f9db124d091df98707
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        host: 127.0.0.1
+        path: /healthz
+        port: 10257
+        scheme: HTTPS
+      initialDelaySeconds: 15
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 15
+    name: kube-controller-manager
+    resources:
+      requests:
+        cpu: 100m
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/log/kube-controller-manager.log
+      name: logfile
+    - mountPath: /etc/ssl
+      name: etcssl
+      readOnly: true
+    - mountPath: /etc/pki/tls
+      name: etcpkitls
+      readOnly: true
+    - mountPath: /etc/pki/ca-trust
+      name: etcpkica-trust
+      readOnly: true
+    - mountPath: /usr/share/ssl
+      name: usrsharessl
+      readOnly: true
+    - mountPath: /usr/ssl
+      name: usrssl
+      readOnly: true
+    - mountPath: /usr/lib/ssl
+      name: usrlibssl
+      readOnly: true
+    - mountPath: /usr/local/openssl
+      name: usrlocalopenssl
+      readOnly: true
+    - mountPath: /var/ssl
+      name: varssl
+      readOnly: true
+    - mountPath: /etc/openssl
+      name: etcopenssl
+      readOnly: true
+    - mountPath: /etc/kubernetes/in-tree-cloud.config
+      name: cloudconfig
+      readOnly: true
+    - mountPath: /srv/kubernetes/ca.crt
+      name: cabundle
+      readOnly: true
+    - mountPath: /srv/kubernetes/kube-controller-manager
+      name: srvkcm
+      readOnly: true
+    - mountPath: /var/lib/kube-controller-manager
+      name: varlibkcm
+      readOnly: true
+    - mountPath: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/
+      name: volplugins
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostNetwork: true
+  nodeName: i-0818197f5dee720c3
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - key: CriticalAddonsOnly
+    operator: Exists
+  - effect: NoExecute
+    operator: Exists
+  volumes:
+  - hostPath:
+      path: /var/log/kube-controller-manager.log
+      type: ""
+    name: logfile
+  - hostPath:
+      path: /etc/ssl
+      type: ""
+    name: etcssl
+  - hostPath:
+      path: /etc/pki/tls
+      type: ""
+    name: etcpkitls
+  - hostPath:
+      path: /etc/pki/ca-trust
+      type: ""
+    name: etcpkica-trust
+  - hostPath:
+      path: /usr/share/ssl
+      type: ""
+    name: usrsharessl
+  - hostPath:
+      path: /usr/ssl
+      type: ""
+    name: usrssl
+  - hostPath:
+      path: /usr/lib/ssl
+      type: ""
+    name: usrlibssl
+  - hostPath:
+      path: /usr/local/openssl
+      type: ""
+    name: usrlocalopenssl
+  - hostPath:
+      path: /var/ssl
+      type: ""
+    name: varssl
+  - hostPath:
+      path: /etc/openssl
+      type: ""
+    name: etcopenssl
+  - hostPath:
+      path: /etc/kubernetes/in-tree-cloud.config
+      type: ""
+    name: cloudconfig
+  - hostPath:
+      path: /srv/kubernetes/ca.crt
+      type: ""
+    name: cabundle
+  - hostPath:
+      path: /srv/kubernetes/kube-controller-manager
+      type: ""
+    name: srvkcm
+  - hostPath:
+      path: /var/lib/kube-controller-manager
+      type: ""
+    name: varlibkcm
+  - hostPath:
+      path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/
+      type: ""
+    name: volplugins

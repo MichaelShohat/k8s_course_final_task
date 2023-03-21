@@ -1,0 +1,9 @@
+apiVersion: flowcontrol.apiserver.k8s.io/v1beta1
+kind: PriorityLevelConfiguration
+metadata:
+  annotations:
+    apf.kubernetes.io/autoupdate-spec: "true"
+  creationTimestamp: "2023-03-21T15:13:52Z"
+  name: exempt
+spec:
+  type: Exempt

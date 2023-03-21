@@ -1,0 +1,122 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: ce2a90270d168b0f1582a1c94fa97582d17f8d4b8a589d1825a04b386c99fb77
+    cni.projectcalico.org/podIP: 100.127.139.65/32
+    cni.projectcalico.org/podIPs: 100.127.139.65/32
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  generateName: calico-kube-controllers-f7f599648-
+  labels:
+    k8s-app: calico-kube-controllers
+    kops.k8s.io/managed-by: kops
+    pod-template-hash: f7f599648
+  name: calico-kube-controllers-f7f599648-rwf9v
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: calico-kube-controllers-f7f599648
+    uid: 5df8aa1d-fc67-48e2-9542-38e50d883759
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node-role.kubernetes.io/control-plane
+            operator: Exists
+          - key: kubernetes.io/os
+            operator: In
+            values:
+            - linux
+        - matchExpressions:
+          - key: node-role.kubernetes.io/master
+            operator: Exists
+          - key: kubernetes.io/os
+            operator: In
+            values:
+            - linux
+  containers:
+  - env:
+    - name: ENABLED_CONTROLLERS
+      value: node
+    - name: DATASTORE_TYPE
+      value: kubernetes
+    image: docker.io/calico/kube-controllers:v3.24.1@sha256:4010b2739792ae5e77a750be909939c0a0a372e378f3c81020754efcf4a91efa
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      exec:
+        command:
+        - /usr/bin/check-status
+        - -l
+      failureThreshold: 6
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 10
+    name: calico-kube-controllers
+    readinessProbe:
+      exec:
+        command:
+        - /usr/bin/check-status
+        - -r
+      failureThreshold: 3
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-8hjdj
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: i-0818197f5dee720c3
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: calico-kube-controllers
+  serviceAccountName: calico-kube-controllers
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - key: CriticalAddonsOnly
+    operator: Exists
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/control-plane
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-8hjdj
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace

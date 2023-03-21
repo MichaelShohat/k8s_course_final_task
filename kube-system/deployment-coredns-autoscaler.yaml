@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2023-03-21T15:13:58Z"
+  labels:
+    addon.kops.k8s.io/name: coredns.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: coredns.addons.k8s.io
+    k8s-app: coredns-autoscaler
+    kubernetes.io/cluster-service: "true"
+  name: coredns-autoscaler
+  namespace: kube-system
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: coredns-autoscaler
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        k8s-app: coredns-autoscaler
+        kops.k8s.io/managed-by: kops
+    spec:
+      containers:
+      - command:
+        - /cluster-proportional-autoscaler
+        - --namespace=kube-system
+        - --configmap=coredns-autoscaler
+        - --target=Deployment/coredns
+        - --default-params={"linear":{"coresPerReplica":256,"nodesPerReplica":16,"preventSinglePointFailure":true}}
+        - --logtostderr=true
+        - --v=2
+        image: registry.k8s.io/cpa/cluster-proportional-autoscaler:1.8.5@sha256:aa60f453d64dfb3c3fd9e7306f988c36c6352c4f2d956aa90467f2808091effa
+        imagePullPolicy: IfNotPresent
+        name: autoscaler
+        resources:
+          requests:
+            cpu: 20m
+            memory: 10Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        kubernetes.io/os: linux
+      priorityClassName: system-cluster-critical
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: coredns-autoscaler
+      serviceAccountName: coredns-autoscaler
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Exists

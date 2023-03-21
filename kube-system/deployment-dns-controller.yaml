@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2023-03-21T15:14:04Z"
+  labels:
+    addon.kops.k8s.io/name: dns-controller.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: dns-controller.addons.k8s.io
+    k8s-app: dns-controller
+    version: v1.25.0
+  name: dns-controller
+  namespace: kube-system
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: dns-controller
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        k8s-addon: dns-controller.addons.k8s.io
+        k8s-app: dns-controller
+        kops.k8s.io/managed-by: kops
+        version: v1.25.0
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/control-plane
+                operator: Exists
+            - matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: Exists
+      containers:
+      - args:
+        - --watch-ingress=false
+        - --dns=aws-route53
+        - --zone=*/Z3S7L7JR4B7VHI
+        - --internal-ipv4
+        - --zone=*/*
+        - -v=2
+        env:
+        - name: KUBERNETES_SERVICE_HOST
+          value: 127.0.0.1
+        image: registry.k8s.io/kops/dns-controller:1.25.0@sha256:635bf83f6dc4f6d7ee42b90c005c5ec61d9fbdd56c25eff3150e4ce5e0c77699
+        imagePullPolicy: IfNotPresent
+        name: dns-controller
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
+        securityContext:
+          runAsNonRoot: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: Default
+      hostNetwork: true
+      priorityClassName: system-cluster-critical
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: dns-controller
+      serviceAccountName: dns-controller
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - key: node.cloudprovider.kubernetes.io/uninitialized
+        operator: Exists
+      - key: node.kubernetes.io/not-ready
+        operator: Exists
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+      - key: node-role.kubernetes.io/master
+        operator: Exists

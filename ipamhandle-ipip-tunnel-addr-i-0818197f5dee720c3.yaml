@@ -1,0 +1,12 @@
+apiVersion: crd.projectcalico.org/v1
+kind: IPAMHandle
+metadata:
+  annotations:
+    projectcalico.org/metadata: '{"creationTimestamp":null}'
+  creationTimestamp: "2023-03-21T15:15:03Z"
+  name: ipip-tunnel-addr-i-0818197f5dee720c3
+spec:
+  block:
+    100.127.139.64/26: 1
+  deleted: false
+  handleID: ipip-tunnel-addr-i-0818197f5dee720c3

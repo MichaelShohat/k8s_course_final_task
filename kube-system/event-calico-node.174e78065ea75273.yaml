@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
+deprecatedSource:
+  component: daemonset-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: calico-node.174e78065ea75273
+  namespace: kube-system
+note: 'Created pod: calico-node-7drvw'
+reason: SuccessfulCreate
+regarding:
+  apiVersion: apps/v1
+  kind: DaemonSet
+  name: calico-node
+  namespace: kube-system
+  resourceVersion: "315"
+  uid: 16b0091f-b4d4-467f-a8a7-4e4246fc8246
+type: Normal

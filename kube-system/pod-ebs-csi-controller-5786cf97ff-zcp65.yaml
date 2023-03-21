@@ -1,0 +1,233 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 7cf5348ab3b895ee5f160e591a515765ae55a44a399b6746dae6cd96cc1c23fa
+    cni.projectcalico.org/podIP: 100.127.139.66/32
+    cni.projectcalico.org/podIPs: 100.127.139.66/32
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  generateName: ebs-csi-controller-5786cf97ff-
+  labels:
+    app: ebs-csi-controller
+    app.kubernetes.io/instance: aws-ebs-csi-driver
+    app.kubernetes.io/name: aws-ebs-csi-driver
+    app.kubernetes.io/version: v1.8.0
+    kops.k8s.io/managed-by: kops
+    pod-template-hash: 5786cf97ff
+  name: ebs-csi-controller-5786cf97ff-zcp65
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: ebs-csi-controller-5786cf97ff
+    uid: 6d321b22-fe24-4047-930e-bb259d6f9d80
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node-role.kubernetes.io/control-plane
+            operator: Exists
+          - key: kubernetes.io/os
+            operator: In
+            values:
+            - linux
+        - matchExpressions:
+          - key: node-role.kubernetes.io/master
+            operator: Exists
+          - key: kubernetes.io/os
+            operator: In
+            values:
+            - linux
+  containers:
+  - args:
+    - controller
+    - --endpoint=$(CSI_ENDPOINT)
+    - --logtostderr
+    - --k8s-tag-cluster-id=newstuffa-8.jb.io
+    - --extra-tags=KubernetesCluster=newstuffa-8.jb.io
+    - --v=5
+    env:
+    - name: CSI_ENDPOINT
+      value: unix:///var/lib/csi/sockets/pluginproxy/csi.sock
+    - name: CSI_NODE_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          key: key_id
+          name: aws-secret
+          optional: true
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          key: access_key
+          name: aws-secret
+          optional: true
+    image: registry.k8s.io/provider-aws/aws-ebs-csi-driver:v1.8.0@sha256:2727c4ba96b420f6280107daaf4a40a5de5f7241a1b70052056a5016dff05b2f
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 5
+      httpGet:
+        path: /healthz
+        port: healthz
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 3
+    name: ebs-plugin
+    ports:
+    - containerPort: 9808
+      name: healthz
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 5
+      httpGet:
+        path: /healthz
+        port: healthz
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 3
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/csi/sockets/pluginproxy/
+      name: socket-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-vbbwc
+      readOnly: true
+  - args:
+    - --csi-address=$(ADDRESS)
+    - --v=5
+    - --feature-gates=Topology=true
+    - --extra-create-metadata
+    - --leader-election=true
+    - --default-fstype=ext4
+    env:
+    - name: ADDRESS
+      value: /var/lib/csi/sockets/pluginproxy/csi.sock
+    image: registry.k8s.io/sig-storage/csi-provisioner:v3.1.0@sha256:122bfb8c1edabb3c0edd63f06523e6940d958d19b3957dc7b1d6f81e9f1f6119
+    imagePullPolicy: IfNotPresent
+    name: csi-provisioner
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/csi/sockets/pluginproxy/
+      name: socket-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-vbbwc
+      readOnly: true
+  - args:
+    - --csi-address=$(ADDRESS)
+    - --v=5
+    - --leader-election=true
+    env:
+    - name: ADDRESS
+      value: /var/lib/csi/sockets/pluginproxy/csi.sock
+    image: registry.k8s.io/sig-storage/csi-attacher:v3.4.0@sha256:8b9c313c05f54fb04f8d430896f5f5904b6cb157df261501b29adc04d2b2dc7b
+    imagePullPolicy: IfNotPresent
+    name: csi-attacher
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/csi/sockets/pluginproxy/
+      name: socket-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-vbbwc
+      readOnly: true
+  - args:
+    - --csi-address=$(ADDRESS)
+    - --v=5
+    env:
+    - name: ADDRESS
+      value: /var/lib/csi/sockets/pluginproxy/csi.sock
+    image: registry.k8s.io/sig-storage/csi-resizer:v1.4.0@sha256:9ebbf9f023e7b41ccee3d52afe39a89e3ddacdbb69269d583abfc25847cfd9e4
+    imagePullPolicy: IfNotPresent
+    name: csi-resizer
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/csi/sockets/pluginproxy/
+      name: socket-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-vbbwc
+      readOnly: true
+  - args:
+    - --csi-address=/csi/csi.sock
+    image: registry.k8s.io/sig-storage/livenessprobe:v2.5.0@sha256:44d8275b3f145bc290fd57cb00de2d713b5e72d2e827d8c5555f8ddb40bf3f02
+    imagePullPolicy: IfNotPresent
+    name: liveness-probe
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /csi
+      name: socket-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-vbbwc
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: i-0818197f5dee720c3
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: ebs-csi-controller-sa
+  serviceAccountName: ebs-csi-controller-sa
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - operator: Exists
+  topologySpreadConstraints:
+  - labelSelector:
+      matchLabels:
+        app: ebs-csi-controller
+        app.kubernetes.io/instance: aws-ebs-csi-driver
+        app.kubernetes.io/name: aws-ebs-csi-driver
+    maxSkew: 1
+    topologyKey: topology.kubernetes.io/zone
+    whenUnsatisfiable: ScheduleAnyway
+  - labelSelector:
+      matchLabels:
+        app: ebs-csi-controller
+        app.kubernetes.io/instance: aws-ebs-csi-driver
+        app.kubernetes.io/name: aws-ebs-csi-driver
+    maxSkew: 1
+    topologyKey: kubernetes.io/hostname
+    whenUnsatisfiable: DoNotSchedule
+  volumes:
+  - emptyDir: {}
+    name: socket-dir
+  - name: kube-api-access-vbbwc
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace

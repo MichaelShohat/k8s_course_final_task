@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 2
+deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
+deprecatedSource:
+  component: controllermanager
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: calico-kube-controllers.174e780641b78b75
+  namespace: kube-system
+note: No matching pods found
+reason: NoPods
+regarding:
+  apiVersion: policy/v1
+  kind: PodDisruptionBudget
+  name: calico-kube-controllers
+  namespace: kube-system
+  resourceVersion: "289"
+  uid: 1622dc25-a140-44f7-b5f5-0367476771ac
+type: Normal

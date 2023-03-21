@@ -1,0 +1,26 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:16:04Z"
+deprecatedLastTimestamp: "2023-03-21T15:16:04Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:16:04Z"
+  name: coredns-autoscaler-975545559-77gtp.174e7819fa69730e
+  namespace: kube-system
+note: 'Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup
+  network for sandbox "449e57199c973a06aaf9166da873fbbfe48be5fb465e13e46ea34b52b54874c2":
+  plugin type="calico" failed (add): stat /var/lib/calico/nodename: no such file or
+  directory: check that the calico/node container is running and has mounted /var/lib/calico/'
+reason: FailedCreatePodSandBox
+regarding:
+  apiVersion: v1
+  kind: Pod
+  name: coredns-autoscaler-975545559-77gtp
+  namespace: kube-system
+  resourceVersion: "858"
+  uid: 6047c2be-ecda-4015-9a4c-33a8711ab734
+type: Warning

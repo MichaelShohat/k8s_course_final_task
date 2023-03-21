@@ -1,0 +1,167 @@
+apiVersion: crd.projectcalico.org/v1
+kind: IPAMBlock
+metadata:
+  annotations:
+    projectcalico.org/metadata: '{"creationTimestamp":null}'
+  creationTimestamp: "2023-03-21T15:15:03Z"
+  name: 100-127-139-64-26
+spec:
+  affinity: host:i-0818197f5dee720c3
+  allocations:
+  - 0
+  - 1
+  - 2
+  - 3
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  attributes:
+  - handle_id: ipip-tunnel-addr-i-0818197f5dee720c3
+    secondary:
+      node: i-0818197f5dee720c3
+      type: ipipTunnelAddress
+  - handle_id: k8s-pod-network.ce2a90270d168b0f1582a1c94fa97582d17f8d4b8a589d1825a04b386c99fb77
+    secondary:
+      namespace: kube-system
+      node: i-0818197f5dee720c3
+      pod: calico-kube-controllers-f7f599648-rwf9v
+      timestamp: 2023-03-21 15:15:04.732290958 +0000 UTC
+  - handle_id: k8s-pod-network.7cf5348ab3b895ee5f160e591a515765ae55a44a399b6746dae6cd96cc1c23fa
+    secondary:
+      namespace: kube-system
+      node: i-0818197f5dee720c3
+      pod: ebs-csi-controller-5786cf97ff-zcp65
+      timestamp: 2023-03-21 15:15:08.965294964 +0000 UTC
+  - handle_id: k8s-pod-network.04f961b0061888dc8649b6c26f8e9464a408f29369d85c24ad00d5d0b319b127
+    secondary:
+      namespace: kube-system
+      node: i-0818197f5dee720c3
+      pod: ebs-csi-node-fjqwq
+      timestamp: 2023-03-21 15:15:13.949314736 +0000 UTC
+  cidr: 100.127.139.64/26
+  deleted: false
+  sequenceNumber: 1679411703871023902
+  sequenceNumberForAllocation:
+    "0": 1679411703871023898
+    "1": 1679411703871023899
+    "2": 1679411703871023900
+    "3": 1679411703871023901
+  strictAffinity: false
+  unallocated:
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63

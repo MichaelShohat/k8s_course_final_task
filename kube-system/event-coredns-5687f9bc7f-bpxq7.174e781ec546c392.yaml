@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:16:24Z"
+deprecatedLastTimestamp: "2023-03-21T15:16:24Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:16:24Z"
+  name: coredns-5687f9bc7f-bpxq7.174e781ec546c392
+  namespace: kube-system
+note: Created container coredns
+reason: Created
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{coredns}
+  kind: Pod
+  name: coredns-5687f9bc7f-bpxq7
+  namespace: kube-system
+  resourceVersion: "859"
+  uid: d666d7bc-1bb1-45af-b3ae-4c27a65e436b
+type: Normal

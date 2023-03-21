@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: "2023-03-21T15:13:58Z"
+  labels:
+    addon.kops.k8s.io/name: coredns.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: coredns.addons.k8s.io
+  name: coredns-autoscaler
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: coredns-autoscaler
+subjects:
+- kind: ServiceAccount
+  name: coredns-autoscaler
+  namespace: kube-system

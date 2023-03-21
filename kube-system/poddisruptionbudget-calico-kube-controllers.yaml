@@ -1,0 +1,16 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  creationTimestamp: "2023-03-21T15:14:00Z"
+  labels:
+    addon.kops.k8s.io/name: networking.projectcalico.org
+    app.kubernetes.io/managed-by: kops
+    k8s-app: calico-kube-controllers
+    role.kubernetes.io/networking: "1"
+  name: calico-kube-controllers
+  namespace: kube-system
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      k8s-app: calico-kube-controllers

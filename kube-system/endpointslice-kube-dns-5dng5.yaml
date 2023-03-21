@@ -1,0 +1,63 @@
+addressType: IPv4
+apiVersion: discovery.k8s.io/v1
+endpoints:
+- addresses:
+  - 100.113.130.67
+  conditions:
+    ready: true
+    serving: true
+    terminating: false
+  nodeName: i-001ee1bdf967ddcca
+  targetRef:
+    kind: Pod
+    name: coredns-5687f9bc7f-bpxq7
+    namespace: kube-system
+    uid: d666d7bc-1bb1-45af-b3ae-4c27a65e436b
+  zone: eu-west-1b
+- addresses:
+  - 100.113.130.68
+  conditions:
+    ready: true
+    serving: true
+    terminating: false
+  nodeName: i-001ee1bdf967ddcca
+  targetRef:
+    kind: Pod
+    name: coredns-5687f9bc7f-zcm6v
+    namespace: kube-system
+    uid: 9216a862-d717-43f2-8d69-daaf15194de9
+  zone: eu-west-1b
+kind: EndpointSlice
+metadata:
+  annotations:
+    endpoints.kubernetes.io/last-change-trigger-time: "2023-03-21T15:16:26Z"
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  generateName: kube-dns-
+  labels:
+    addon.kops.k8s.io/name: coredns.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+    k8s-addon: coredns.addons.k8s.io
+    k8s-app: kube-dns
+    kubernetes.io/cluster-service: "true"
+    kubernetes.io/name: CoreDNS
+    kubernetes.io/service-name: kube-dns
+  name: kube-dns-5dng5
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Service
+    name: kube-dns
+    uid: 1be16cb7-217a-49a5-a3d6-d5d20ea3b055
+ports:
+- name: metrics
+  port: 9153
+  protocol: TCP
+- name: dns
+  port: 53
+  protocol: UDP
+- name: dns-tcp
+  port: 53
+  protocol: TCP

@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
+deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
+deprecatedSource:
+  component: default-scheduler
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: aws-cloud-controller-manager-48ptb.174e78065d7ab03d
+  namespace: kube-system
+note: Successfully assigned kube-system/aws-cloud-controller-manager-48ptb to i-0818197f5dee720c3
+reason: Scheduled
+regarding:
+  apiVersion: v1
+  kind: Pod
+  name: aws-cloud-controller-manager-48ptb
+  namespace: kube-system
+  resourceVersion: "520"
+  uid: 63522ce2-2b2c-49b7-a8d5-6bd911d71f12
+type: Normal

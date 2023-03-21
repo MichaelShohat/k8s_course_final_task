@@ -1,0 +1,189 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 04f961b0061888dc8649b6c26f8e9464a408f29369d85c24ad00d5d0b319b127
+    cni.projectcalico.org/podIP: 100.127.139.67/32
+    cni.projectcalico.org/podIPs: 100.127.139.67/32
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  generateName: ebs-csi-node-
+  labels:
+    app: ebs-csi-node
+    app.kubernetes.io/instance: aws-ebs-csi-driver
+    app.kubernetes.io/name: aws-ebs-csi-driver
+    app.kubernetes.io/version: v1.8.0
+    controller-revision-hash: 6ff74d6955
+    kops.k8s.io/managed-by: kops
+    pod-template-generation: "1"
+  name: ebs-csi-node-fjqwq
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: DaemonSet
+    name: ebs-csi-node
+    uid: aafa89be-3098-4715-9d39-58b561417340
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchFields:
+          - key: metadata.name
+            operator: In
+            values:
+            - i-0818197f5dee720c3
+  containers:
+  - args:
+    - node
+    - --endpoint=$(CSI_ENDPOINT)
+    - --logtostderr
+    - --v=2
+    env:
+    - name: CSI_ENDPOINT
+      value: unix:/csi/csi.sock
+    - name: CSI_NODE_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    image: registry.k8s.io/provider-aws/aws-ebs-csi-driver:v1.8.0@sha256:2727c4ba96b420f6280107daaf4a40a5de5f7241a1b70052056a5016dff05b2f
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 5
+      httpGet:
+        path: /healthz
+        port: healthz
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 3
+    name: ebs-plugin
+    ports:
+    - containerPort: 9808
+      name: healthz
+      protocol: TCP
+    resources: {}
+    securityContext:
+      privileged: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/kubelet
+      mountPropagation: Bidirectional
+      name: kubelet-dir
+    - mountPath: /csi
+      name: plugin-dir
+    - mountPath: /dev
+      name: device-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-5zq29
+      readOnly: true
+  - args:
+    - --csi-address=$(ADDRESS)
+    - --kubelet-registration-path=$(DRIVER_REG_SOCK_PATH)
+    - --v=5
+    env:
+    - name: ADDRESS
+      value: /csi/csi.sock
+    - name: DRIVER_REG_SOCK_PATH
+      value: /var/lib/kubelet/plugins/ebs.csi.aws.com/csi.sock
+    image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.5.1@sha256:0103eee7c35e3e0b5cd8cdca9850dc71c793cdeb6669d8be7a89440da2d06ae4
+    imagePullPolicy: IfNotPresent
+    name: node-driver-registrar
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /csi
+      name: plugin-dir
+    - mountPath: /registration
+      name: registration-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-5zq29
+      readOnly: true
+  - args:
+    - --csi-address=/csi/csi.sock
+    image: registry.k8s.io/sig-storage/livenessprobe:v2.5.0@sha256:44d8275b3f145bc290fd57cb00de2d713b5e72d2e827d8c5555f8ddb40bf3f02
+    imagePullPolicy: IfNotPresent
+    name: liveness-probe
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /csi
+      name: plugin-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-5zq29
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: i-0818197f5dee720c3
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000001000
+  priorityClassName: system-node-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: ebs-csi-node-sa
+  serviceAccountName: ebs-csi-node-sa
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - operator: Exists
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/disk-pressure
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/pid-pressure
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/unschedulable
+    operator: Exists
+  volumes:
+  - hostPath:
+      path: /var/lib/kubelet
+      type: Directory
+    name: kubelet-dir
+  - hostPath:
+      path: /var/lib/kubelet/plugins/ebs.csi.aws.com/
+      type: DirectoryOrCreate
+    name: plugin-dir
+  - hostPath:
+      path: /var/lib/kubelet/plugins_registry/
+      type: Directory
+    name: registration-dir
+  - hostPath:
+      path: /dev
+      type: Directory
+    name: device-dir
+  - name: kube-api-access-5zq29
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
