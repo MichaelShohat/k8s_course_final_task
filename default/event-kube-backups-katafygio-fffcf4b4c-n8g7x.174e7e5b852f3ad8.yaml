@@ -1,0 +1,24 @@
+apiVersion: v1
+count: 1
+eventTime: null
+firstTimestamp: "2023-03-21T17:10:42Z"
+involvedObject:
+  apiVersion: v1
+  kind: Pod
+  name: kube-backups-katafygio-fffcf4b4c-n8g7x
+  namespace: default
+  resourceVersion: "20274"
+  uid: 22572c08-5f20-4bd3-b2f9-897c51e1b286
+kind: Event
+lastTimestamp: "2023-03-21T17:10:42Z"
+message: Successfully assigned default/kube-backups-katafygio-fffcf4b4c-n8g7x to i-001ee1bdf967ddcca
+metadata:
+  creationTimestamp: "2023-03-21T17:10:42Z"
+  name: kube-backups-katafygio-fffcf4b4c-n8g7x.174e7e5b852f3ad8
+  namespace: default
+reason: Scheduled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
+type: Normal

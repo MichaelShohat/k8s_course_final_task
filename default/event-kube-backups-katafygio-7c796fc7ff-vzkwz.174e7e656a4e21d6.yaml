@@ -1,21 +1,21 @@
 apiVersion: v1
 count: 1
 eventTime: null
-firstTimestamp: "2023-03-21T16:41:59Z"
+firstTimestamp: "2023-03-21T17:11:25Z"
 involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{katafygio}
   kind: Pod
-  name: kube-backups-katafygio-5b77fc7d67-w7n4l
+  name: kube-backups-katafygio-7c796fc7ff-vzkwz
   namespace: default
-  resourceVersion: "15506"
-  uid: 8dec491f-b969-435f-b2f8-80609f406c10
+  resourceVersion: "20425"
+  uid: 72f8c551-33b5-45bf-b071-e6e360e8fc5c
 kind: Event
-lastTimestamp: "2023-03-21T16:41:59Z"
+lastTimestamp: "2023-03-21T17:11:25Z"
 message: Created container katafygio
 metadata:
-  creationTimestamp: "2023-03-21T16:41:59Z"
-  name: kube-backups-katafygio-5b77fc7d67-w7n4l.174e7cca375af89b
+  creationTimestamp: "2023-03-21T17:11:25Z"
+  name: kube-backups-katafygio-7c796fc7ff-vzkwz.174e7e656a4e21d6
   namespace: default
 reason: Created
 reportingComponent: ""

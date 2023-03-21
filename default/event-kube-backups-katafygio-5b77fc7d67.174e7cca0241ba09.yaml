@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T16:41:58Z"
-deprecatedLastTimestamp: "2023-03-21T16:41:58Z"
-deprecatedSource:
-  component: replicaset-controller
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T16:41:58Z"
-  name: kube-backups-katafygio-5b77fc7d67.174e7cca0241ba09
-  namespace: default
-note: 'Created pod: kube-backups-katafygio-5b77fc7d67-w7n4l'
-reason: SuccessfulCreate
-regarding:
+firstTimestamp: "2023-03-21T16:41:58Z"
+involvedObject:
   apiVersion: apps/v1
   kind: ReplicaSet
   name: kube-backups-katafygio-5b77fc7d67
   namespace: default
   resourceVersion: "15502"
   uid: 7a2073d3-d1b3-452e-95d4-3e24e4d63ada
+kind: Event
+lastTimestamp: "2023-03-21T16:41:58Z"
+message: 'Created pod: kube-backups-katafygio-5b77fc7d67-w7n4l'
+metadata:
+  creationTimestamp: "2023-03-21T16:41:58Z"
+  name: kube-backups-katafygio-5b77fc7d67.174e7cca0241ba09
+  namespace: default
+reason: SuccessfulCreate
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: replicaset-controller
 type: Normal

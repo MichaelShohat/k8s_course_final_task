@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+    deployment.kubernetes.io/desired-replicas: "1"
+    deployment.kubernetes.io/max-replicas: "1"
+    deployment.kubernetes.io/revision: "1"
+    meta.helm.sh/release-name: kube-backups
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2023-03-21T17:15:22Z"
+  labels:
+    app: katafygio
+    chart: katafygio-0.5.1
+    heritage: Helm
+    pod-template-hash: 7db9977bd9
+    release: kube-backups
+  name: kube-backups-katafygio-7db9977bd9
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Deployment
+    name: kube-backups-katafygio
+    uid: 5e1f06f0-05b2-4fa5-8c5e-bc1c3679bf8b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: katafygio
+      pod-template-hash: 7db9977bd9
+      release: kube-backups
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: katafygio
+        chart: katafygio-0.5.1
+        heritage: Helm
+        pod-template-hash: 7db9977bd9
+        release: kube-backups
+    spec:
+      containers:
+      - args:
+        - --local-dir=/var/lib/katafygio/data
+        - --healthcheck-port=8080
+        - --git-url=https://MichaelShohat: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@github.com/MichaelShohat/k8s_course_final_task.git
+        - --log-level=info
+        - --log-output=stdout
+        - --resync-interval=300
+        - --exclude-kind=replicasets
+        - --exclude-kind=endpoints
+        - --exclude-kind=events
+        image: bpineau/katafygio:v0.8.3
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: http
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 10
+        name: katafygio
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: http
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 10
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/katafygio/data
+          name: kube-backups-katafygio-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 65534
+      serviceAccount: kube-backups-katafygio
+      serviceAccountName: kube-backups-katafygio
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: kube-backups-katafygio-data

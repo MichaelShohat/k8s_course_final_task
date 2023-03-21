@@ -1,0 +1,24 @@
+apiVersion: v1
+count: 1
+eventTime: null
+firstTimestamp: "2023-03-21T16:55:43Z"
+involvedObject:
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  name: kube-backups-katafygio-6b4d79b9f6
+  namespace: default
+  resourceVersion: "17776"
+  uid: bde5707d-b47d-4f62-a794-b39e7a64ee30
+kind: Event
+lastTimestamp: "2023-03-21T16:55:43Z"
+message: 'Created pod: kube-backups-katafygio-6b4d79b9f6-vkkcs'
+metadata:
+  creationTimestamp: "2023-03-21T16:55:43Z"
+  name: kube-backups-katafygio-6b4d79b9f6.174e7d8a30f4d275
+  namespace: default
+reason: SuccessfulCreate
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: replicaset-controller
+type: Normal

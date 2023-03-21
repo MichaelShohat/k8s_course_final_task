@@ -1,0 +1,25 @@
+apiVersion: v1
+count: 1
+eventTime: null
+firstTimestamp: "2023-03-21T16:58:36Z"
+involvedObject:
+  apiVersion: v1
+  kind: Pod
+  name: nginx-deployment-7fb96c846b-jf6px
+  namespace: hackathon-prod
+  resourceVersion: "18280"
+  uid: dce658d6-704f-44c4-aa76-f493f68b3e0a
+kind: Event
+lastTimestamp: "2023-03-21T16:58:36Z"
+message: Successfully assigned hackathon-prod/nginx-deployment-7fb96c846b-jf6px to
+  i-001ee1bdf967ddcca
+metadata:
+  creationTimestamp: "2023-03-21T16:58:36Z"
+  name: nginx-deployment-7fb96c846b-jf6px.174e7db2790427ec
+  namespace: hackathon-prod
+reason: Scheduled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
+type: Normal

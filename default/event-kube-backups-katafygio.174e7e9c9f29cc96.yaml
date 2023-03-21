@@ -1,20 +1,20 @@
 apiVersion: v1
 count: 1
 eventTime: null
-firstTimestamp: "2023-03-21T16:41:58Z"
+firstTimestamp: "2023-03-21T17:15:22Z"
 involvedObject:
   apiVersion: apps/v1
   kind: Deployment
   name: kube-backups-katafygio
   namespace: default
-  resourceVersion: "15500"
-  uid: b400e0b8-8437-4a4b-b282-ce57d123922f
+  resourceVersion: "21115"
+  uid: 5e1f06f0-05b2-4fa5-8c5e-bc1c3679bf8b
 kind: Event
-lastTimestamp: "2023-03-21T16:41:58Z"
-message: Scaled up replica set kube-backups-katafygio-5b77fc7d67 to 1
+lastTimestamp: "2023-03-21T17:15:22Z"
+message: Scaled up replica set kube-backups-katafygio-7db9977bd9 to 1
 metadata:
-  creationTimestamp: "2023-03-21T16:41:58Z"
-  name: kube-backups-katafygio.174e7cca01b1866d
+  creationTimestamp: "2023-03-21T17:15:22Z"
+  name: kube-backups-katafygio.174e7e9c9f29cc96
   namespace: default
 reason: ScalingReplicaSet
 reportingComponent: ""

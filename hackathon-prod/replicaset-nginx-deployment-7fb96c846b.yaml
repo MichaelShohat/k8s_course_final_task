@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   annotations:
-    deployment.kubernetes.io/desired-replicas: "2"
-    deployment.kubernetes.io/max-replicas: "3"
+    deployment.kubernetes.io/desired-replicas: "4"
+    deployment.kubernetes.io/max-replicas: "5"
     deployment.kubernetes.io/revision: "1"
   creationTimestamp: "2023-03-21T15:49:08Z"
   labels:
@@ -19,7 +19,7 @@ metadata:
     name: nginx-deployment
     uid: 6911d6b8-2bce-4d0e-bd2c-a4f7ff5260ed
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: nginx

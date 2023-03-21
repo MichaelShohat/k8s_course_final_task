@@ -1,0 +1,26 @@
+apiVersion: v1
+count: 1
+eventTime: null
+firstTimestamp: "2023-03-21T16:56:16Z"
+involvedObject:
+  apiVersion: v1
+  fieldPath: spec.containers{nginx}
+  kind: Pod
+  name: nginx-deployment-7fb96c846b-jtdk6
+  namespace: hackathon-prod
+  resourceVersion: "17887"
+  uid: 16a7ba3f-41e9-450a-b6b3-0e3def682be0
+kind: Event
+lastTimestamp: "2023-03-21T16:56:16Z"
+message: Created container nginx
+metadata:
+  creationTimestamp: "2023-03-21T16:56:16Z"
+  name: nginx-deployment-7fb96c846b-jtdk6.174e7d91e0c715e3
+  namespace: hackathon-prod
+reason: Created
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+type: Normal
