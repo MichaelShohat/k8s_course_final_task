@@ -1,26 +1,28 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:58Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:58Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:58Z"
-  name: ebs-csi-node-fjqwq.174e780aaa58a272
-  namespace: kube-system
-note: 'Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup
-  network for sandbox "083ff2ddf520279f2ea363c77f0382add954672b9d67432d26db5d6336745d31":
-  plugin type="calico" failed (add): stat /var/lib/calico/nodename: no such file or
-  directory: check that the calico/node container is running and has mounted /var/lib/calico/'
-reason: FailedCreatePodSandBox
-regarding:
+firstTimestamp: "2023-03-21T15:14:58Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: ebs-csi-node-fjqwq
   namespace: kube-system
   resourceVersion: "499"
   uid: f38450a5-d0d7-42dc-bab2-af40a946794b
+kind: Event
+lastTimestamp: "2023-03-21T15:14:58Z"
+message: 'Failed to create pod sandbox: rpc error: code = Unknown desc = failed to
+  setup network for sandbox "083ff2ddf520279f2ea363c77f0382add954672b9d67432d26db5d6336745d31":
+  plugin type="calico" failed (add): stat /var/lib/calico/nodename: no such file or
+  directory: check that the calico/node container is running and has mounted /var/lib/calico/'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:58Z"
+  name: ebs-csi-node-fjqwq.174e780aaa58a272
+  namespace: kube-system
+reason: FailedCreatePodSandBox
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Warning

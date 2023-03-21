@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 2
-deprecatedFirstTimestamp: "2023-03-21T15:14:38Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: controllermanager
+apiVersion: v1
+count: 2
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: kube-dns.174e78061d4b2b06
-  namespace: kube-system
-note: No matching pods found
-reason: NoPods
-regarding:
+firstTimestamp: "2023-03-21T15:14:38Z"
+involvedObject:
   apiVersion: policy/v1
   kind: PodDisruptionBudget
   name: kube-dns
   namespace: kube-system
   resourceVersion: "208"
   uid: fa0eb773-5a31-4685-8d6a-f573972782d3
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: No matching pods found
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: kube-dns.174e78061d4b2b06
+  namespace: kube-system
+reason: NoPods
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: controllermanager
 type: Normal

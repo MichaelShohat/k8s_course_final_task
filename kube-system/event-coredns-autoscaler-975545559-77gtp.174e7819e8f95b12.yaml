@@ -1,19 +1,21 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:16:03Z"
-deprecatedLastTimestamp: "2023-03-21T15:16:03Z"
-deprecatedSource:
-  component: taint-controller
+apiVersion: v1
+count: 1
 eventTime: null
+firstTimestamp: "2023-03-21T15:16:03Z"
+involvedObject:
+  kind: Pod
+  name: coredns-autoscaler-975545559-77gtp
+  namespace: kube-system
 kind: Event
+lastTimestamp: "2023-03-21T15:16:03Z"
+message: Cancelling deletion of Pod kube-system/coredns-autoscaler-975545559-77gtp
 metadata:
   creationTimestamp: "2023-03-21T15:16:03Z"
   name: coredns-autoscaler-975545559-77gtp.174e7819e8f95b12
   namespace: kube-system
-note: Cancelling deletion of Pod kube-system/coredns-autoscaler-975545559-77gtp
 reason: TaintManagerEviction
-regarding:
-  kind: Pod
-  name: coredns-autoscaler-975545559-77gtp
-  namespace: kube-system
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: taint-controller
 type: Normal

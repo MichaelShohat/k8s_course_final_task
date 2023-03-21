@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: default-scheduler
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: calico-node-7drvw.174e780661a56363
-  namespace: kube-system
-note: Successfully assigned kube-system/calico-node-7drvw to i-0818197f5dee720c3
-reason: Scheduled
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: calico-node-7drvw
   namespace: kube-system
   resourceVersion: "528"
   uid: f23142f6-d56a-4414-9d42-6608e1d9529b
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: Successfully assigned kube-system/calico-node-7drvw to i-0818197f5dee720c3
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: calico-node-7drvw.174e780661a56363
+  namespace: kube-system
+reason: Scheduled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
 type: Normal

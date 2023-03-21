@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: daemonset-controller
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: aws-cloud-controller-manager.174e780657cd5cd7
-  namespace: kube-system
-note: 'Created pod: aws-cloud-controller-manager-48ptb'
-reason: SuccessfulCreate
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: apps/v1
   kind: DaemonSet
   name: aws-cloud-controller-manager
   namespace: kube-system
   resourceVersion: "391"
   uid: 3bffd509-0775-4e08-b50c-7438911d1bb3
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: 'Created pod: aws-cloud-controller-manager-48ptb'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: aws-cloud-controller-manager.174e780657cd5cd7
+  namespace: kube-system
+reason: SuccessfulCreate
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: daemonset-controller
 type: Normal

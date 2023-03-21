@@ -1,23 +1,25 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: default-scheduler
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: coredns-5687f9bc7f-bpxq7.174e780655b75453
-  namespace: kube-system
-note: '0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane:
-  }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.'
-reason: FailedScheduling
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: coredns-5687f9bc7f-bpxq7
   namespace: kube-system
   resourceVersion: "504"
   uid: d666d7bc-1bb1-45af-b3ae-4c27a65e436b
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: '0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane:
+  }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: coredns-5687f9bc7f-bpxq7.174e780655b75453
+  namespace: kube-system
+reason: FailedScheduling
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
 type: Warning

@@ -1,20 +1,22 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:02Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:02Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
+firstTimestamp: "2023-03-21T15:15:02Z"
+involvedObject:
+  kind: Node
+  name: i-001ee1bdf967ddcca
+  uid: i-001ee1bdf967ddcca
 kind: Event
+lastTimestamp: "2023-03-21T15:15:02Z"
+message: Updated Node Allocatable limit across pods
 metadata:
   creationTimestamp: "2023-03-21T15:15:12Z"
   name: i-001ee1bdf967ddcca.174e780bb3eb7e42
   namespace: default
-note: Updated Node Allocatable limit across pods
 reason: NodeAllocatableEnforced
-regarding:
-  kind: Node
-  name: i-001ee1bdf967ddcca
-  uid: i-001ee1bdf967ddcca
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

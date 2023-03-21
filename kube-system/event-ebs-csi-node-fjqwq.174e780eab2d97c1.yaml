@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:15Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:15Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:15:15Z"
-  name: ebs-csi-node-fjqwq.174e780eab2d97c1
-  namespace: kube-system
-note: Created container node-driver-registrar
-reason: Created
-regarding:
+firstTimestamp: "2023-03-21T15:15:15Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{node-driver-registrar}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: kube-system
   resourceVersion: "499"
   uid: f38450a5-d0d7-42dc-bab2-af40a946794b
+kind: Event
+lastTimestamp: "2023-03-21T15:15:15Z"
+message: Created container node-driver-registrar
+metadata:
+  creationTimestamp: "2023-03-21T15:15:15Z"
+  name: ebs-csi-node-fjqwq.174e780eab2d97c1
+  namespace: kube-system
+reason: Created
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

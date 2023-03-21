@@ -1,20 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:43Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:43Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:43Z"
-  name: dns-controller-757cbb666b-7fdnt.174e780755ae77cb
-  namespace: kube-system
-note: Successfully pulled image "registry.k8s.io/kops/dns-controller:1.25.0@sha256:635bf83f6dc4f6d7ee42b90c005c5ec61d9fbdd56c25eff3150e4ce5e0c77699"
-  in 2.757511752s
-reason: Pulled
-regarding:
+firstTimestamp: "2023-03-21T15:14:43Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{dns-controller}
   kind: Pod
@@ -22,4 +10,18 @@ regarding:
   namespace: kube-system
   resourceVersion: "526"
   uid: 720ec996-6a5f-4708-9070-0ac8445d0a7c
+kind: Event
+lastTimestamp: "2023-03-21T15:14:43Z"
+message: Successfully pulled image "registry.k8s.io/kops/dns-controller:1.25.0@sha256:635bf83f6dc4f6d7ee42b90c005c5ec61d9fbdd56c25eff3150e4ce5e0c77699"
+  in 2.757511752s
+metadata:
+  creationTimestamp: "2023-03-21T15:14:43Z"
+  name: dns-controller-757cbb666b-7fdnt.174e780755ae77cb
+  namespace: kube-system
+reason: Pulled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

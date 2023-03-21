@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:16:22Z"
-deprecatedLastTimestamp: "2023-03-21T15:16:22Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:16:22Z"
-  name: coredns-autoscaler-975545559-77gtp.174e781e618f5e05
-  namespace: kube-system
-note: Created container autoscaler
-reason: Created
-regarding:
+firstTimestamp: "2023-03-21T15:16:22Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{autoscaler}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: kube-system
   resourceVersion: "858"
   uid: 6047c2be-ecda-4015-9a4c-33a8711ab734
+kind: Event
+lastTimestamp: "2023-03-21T15:16:22Z"
+message: Created container autoscaler
+metadata:
+  creationTimestamp: "2023-03-21T15:16:22Z"
+  name: coredns-autoscaler-975545559-77gtp.174e781e618f5e05
+  namespace: kube-system
+reason: Created
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

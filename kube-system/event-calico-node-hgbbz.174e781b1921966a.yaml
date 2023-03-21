@@ -1,20 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:16:08Z"
-deprecatedLastTimestamp: "2023-03-21T15:16:08Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:16:08Z"
-  name: calico-node-hgbbz.174e781b1921966a
-  namespace: kube-system
-note: Container image "docker.io/calico/node:v3.24.1@sha256:43f6cee5ca002505ea142b3821a76d585aa0c8d22bc58b7e48589ca7deb48c13"
-  already present on machine
-reason: Pulled
-regarding:
+firstTimestamp: "2023-03-21T15:16:08Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{calico-node}
   kind: Pod
@@ -22,4 +10,18 @@ regarding:
   namespace: kube-system
   resourceVersion: "685"
   uid: c6cb944c-db27-49ed-b86d-cb046a7431b4
+kind: Event
+lastTimestamp: "2023-03-21T15:16:08Z"
+message: Container image "docker.io/calico/node:v3.24.1@sha256:43f6cee5ca002505ea142b3821a76d585aa0c8d22bc58b7e48589ca7deb48c13"
+  already present on machine
+metadata:
+  creationTimestamp: "2023-03-21T15:16:08Z"
+  name: calico-node-hgbbz.174e781b1921966a
+  namespace: kube-system
+reason: Pulled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:49:14Z"
-deprecatedLastTimestamp: "2023-03-21T15:49:14Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:49:14Z"
-  name: nginx-deployment-7fb96c846b-hftpl.174e79e9515a6ce6
-  namespace: hackathon-prod
-note: Created container nginx
-reason: Created
-regarding:
+firstTimestamp: "2023-03-21T15:49:14Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{nginx}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: hackathon-prod
   resourceVersion: "6291"
   uid: e3ce3760-43e8-4603-87ba-24ca9131355b
+kind: Event
+lastTimestamp: "2023-03-21T15:49:14Z"
+message: Created container nginx
+metadata:
+  creationTimestamp: "2023-03-21T15:49:14Z"
+  name: nginx-deployment-7fb96c846b-hftpl.174e79e9515a6ce6
+  namespace: hackathon-prod
+reason: Created
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

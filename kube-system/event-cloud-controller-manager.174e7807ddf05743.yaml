@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:46Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:46Z"
-deprecatedSource:
-  component: cloud-controller-manager
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:46Z"
-  name: cloud-controller-manager.174e7807ddf05743
-  namespace: kube-system
-note: ip-172-31-9-138_5fee98b9-ae9a-48e9-8e7b-a1059052a5d9 became leader
-reason: LeaderElection
-regarding:
+firstTimestamp: "2023-03-21T15:14:46Z"
+involvedObject:
   apiVersion: coordination.k8s.io/v1
   kind: Lease
   name: cloud-controller-manager
   namespace: kube-system
   resourceVersion: "569"
   uid: 3e9c90ce-433e-48c4-92c2-249edbea166d
+kind: Event
+lastTimestamp: "2023-03-21T15:14:46Z"
+message: ip-172-31-9-138_5fee98b9-ae9a-48e9-8e7b-a1059052a5d9 became leader
+metadata:
+  creationTimestamp: "2023-03-21T15:14:46Z"
+  name: cloud-controller-manager.174e7807ddf05743
+  namespace: kube-system
+reason: LeaderElection
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: cloud-controller-manager
 type: Normal

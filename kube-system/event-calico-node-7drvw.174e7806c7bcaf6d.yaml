@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:41Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:41Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:41Z"
-  name: calico-node-7drvw.174e7806c7bcaf6d
-  namespace: kube-system
-note: Pulling image "docker.io/calico/cni:v3.24.1@sha256:e60b90d7861e872efa720ead575008bc6eca7bee41656735dcaa8210b688fcd9"
-reason: Pulling
-regarding:
+firstTimestamp: "2023-03-21T15:14:41Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.initContainers{upgrade-ipam}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: kube-system
   resourceVersion: "537"
   uid: f23142f6-d56a-4414-9d42-6608e1d9529b
+kind: Event
+lastTimestamp: "2023-03-21T15:14:41Z"
+message: Pulling image "docker.io/calico/cni:v3.24.1@sha256:e60b90d7861e872efa720ead575008bc6eca7bee41656735dcaa8210b688fcd9"
+metadata:
+  creationTimestamp: "2023-03-21T15:14:41Z"
+  name: calico-node-7drvw.174e7806c7bcaf6d
+  namespace: kube-system
+reason: Pulling
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:49Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:49Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:49Z"
-  name: calico-node-7drvw.174e7808b5e2011b
-  namespace: kube-system
-note: Created container upgrade-ipam
-reason: Created
-regarding:
+firstTimestamp: "2023-03-21T15:14:49Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.initContainers{upgrade-ipam}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: kube-system
   resourceVersion: "537"
   uid: f23142f6-d56a-4414-9d42-6608e1d9529b
+kind: Event
+lastTimestamp: "2023-03-21T15:14:49Z"
+message: Created container upgrade-ipam
+metadata:
+  creationTimestamp: "2023-03-21T15:14:49Z"
+  name: calico-node-7drvw.174e7808b5e2011b
+  namespace: kube-system
+reason: Created
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

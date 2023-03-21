@@ -1,24 +1,26 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:06Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:06Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:15:13Z"
-  name: kube-proxy-i-001ee1bdf967ddcca.174e780c8c0d2853
-  namespace: kube-system
-note: Successfully pulled image "registry.k8s.io/kube-proxy:v1.25.4@sha256:1df694ba49eb1263a84c6cb32dd143d09b3e0b6cb0d48fddb3424cc4afe22e49"
-  in 2.373297345s
-reason: Pulled
-regarding:
+firstTimestamp: "2023-03-21T15:15:06Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{kube-proxy}
   kind: Pod
   name: kube-proxy-i-001ee1bdf967ddcca
   namespace: kube-system
   uid: 965c7eee449f6dcabd15429708f9b65d
+kind: Event
+lastTimestamp: "2023-03-21T15:15:06Z"
+message: Successfully pulled image "registry.k8s.io/kube-proxy:v1.25.4@sha256:1df694ba49eb1263a84c6cb32dd143d09b3e0b6cb0d48fddb3424cc4afe22e49"
+  in 2.373297345s
+metadata:
+  creationTimestamp: "2023-03-21T15:15:13Z"
+  name: kube-proxy-i-001ee1bdf967ddcca.174e780c8c0d2853
+  namespace: kube-system
+reason: Pulled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

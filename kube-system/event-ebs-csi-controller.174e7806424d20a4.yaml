@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 2
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: controllermanager
+apiVersion: v1
+count: 2
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: ebs-csi-controller.174e7806424d20a4
-  namespace: kube-system
-note: No matching pods found
-reason: NoPods
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: policy/v1
   kind: PodDisruptionBudget
   name: ebs-csi-controller
   namespace: kube-system
   resourceVersion: "356"
   uid: cf6e394e-2e09-42c3-ae54-79037b6a0f1a
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: No matching pods found
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: ebs-csi-controller.174e7806424d20a4
+  namespace: kube-system
+reason: NoPods
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: controllermanager
 type: Normal

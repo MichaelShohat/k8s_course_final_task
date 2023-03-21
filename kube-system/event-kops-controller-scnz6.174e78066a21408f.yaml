@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:40Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:40Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:40Z"
-  name: kops-controller-scnz6.174e78066a21408f
-  namespace: kube-system
-note: Pulling image "registry.k8s.io/kops/kops-controller:1.25.0@sha256:ffca50fd02426835e9b3c51d950e0726774de27934d944457a0391d8ba64a5e6"
-reason: Pulling
-regarding:
+firstTimestamp: "2023-03-21T15:14:40Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{kops-controller}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: kube-system
   resourceVersion: "497"
   uid: 35e59f42-ae40-434d-b7b8-bbd0a8c35453
+kind: Event
+lastTimestamp: "2023-03-21T15:14:40Z"
+message: Pulling image "registry.k8s.io/kops/kops-controller:1.25.0@sha256:ffca50fd02426835e9b3c51d950e0726774de27934d944457a0391d8ba64a5e6"
+metadata:
+  creationTimestamp: "2023-03-21T15:14:40Z"
+  name: kops-controller-scnz6.174e78066a21408f
+  namespace: kube-system
+reason: Pulling
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

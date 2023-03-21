@@ -1,25 +1,27 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 9
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:55Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 9
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: ebs-csi-node-fjqwq.174e78064ef05f70
-  namespace: kube-system
-note: 'network is not ready: container runtime network not ready: NetworkReady=false
-  reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not
-  initialized'
-reason: NetworkNotReady
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: ebs-csi-node-fjqwq
   namespace: kube-system
   resourceVersion: "499"
   uid: f38450a5-d0d7-42dc-bab2-af40a946794b
+kind: Event
+lastTimestamp: "2023-03-21T15:14:55Z"
+message: 'network is not ready: container runtime network not ready: NetworkReady=false
+  reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not
+  initialized'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: ebs-csi-node-fjqwq.174e78064ef05f70
+  namespace: kube-system
+reason: NetworkNotReady
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Warning

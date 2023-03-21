@@ -1,20 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:09Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:09Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:15:09Z"
-  name: calico-kube-controllers-f7f599648-rwf9v.174e780d423a84d1
-  namespace: kube-system
-note: Successfully pulled image "docker.io/calico/kube-controllers:v3.24.1@sha256:4010b2739792ae5e77a750be909939c0a0a372e378f3c81020754efcf4a91efa"
-  in 4.423878031s
-reason: Pulled
-regarding:
+firstTimestamp: "2023-03-21T15:15:09Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{calico-kube-controllers}
   kind: Pod
@@ -22,4 +10,18 @@ regarding:
   namespace: kube-system
   resourceVersion: "641"
   uid: f9335da4-f0ef-421b-8e9f-b71f966dc766
+kind: Event
+lastTimestamp: "2023-03-21T15:15:09Z"
+message: Successfully pulled image "docker.io/calico/kube-controllers:v3.24.1@sha256:4010b2739792ae5e77a750be909939c0a0a372e378f3c81020754efcf4a91efa"
+  in 4.423878031s
+metadata:
+  creationTimestamp: "2023-03-21T15:15:09Z"
+  name: calico-kube-controllers-f7f599648-rwf9v.174e780d423a84d1
+  namespace: kube-system
+reason: Pulled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

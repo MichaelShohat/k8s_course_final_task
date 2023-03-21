@@ -1,24 +1,26 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:13:27Z"
-deprecatedLastTimestamp: "2023-03-21T15:13:27Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:01Z"
-  name: kube-scheduler-i-0818197f5dee720c3.174e77f589e35484
-  namespace: kube-system
-note: Successfully pulled image "registry.k8s.io/kube-scheduler:v1.25.4@sha256:840d5b9fc29f4cddef60d832f410e3979dde2b8224cdb76dce0784394c0366a0"
-  in 14.494572897s
-reason: Pulled
-regarding:
+firstTimestamp: "2023-03-21T15:13:27Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{kube-scheduler}
   kind: Pod
   name: kube-scheduler-i-0818197f5dee720c3
   namespace: kube-system
   uid: 4281bf792c82184fc1a1f4366d8edb3c
+kind: Event
+lastTimestamp: "2023-03-21T15:13:27Z"
+message: Successfully pulled image "registry.k8s.io/kube-scheduler:v1.25.4@sha256:840d5b9fc29f4cddef60d832f410e3979dde2b8224cdb76dce0784394c0366a0"
+  in 14.494572897s
+metadata:
+  creationTimestamp: "2023-03-21T15:14:01Z"
+  name: kube-scheduler-i-0818197f5dee720c3.174e77f589e35484
+  namespace: kube-system
+reason: Pulled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

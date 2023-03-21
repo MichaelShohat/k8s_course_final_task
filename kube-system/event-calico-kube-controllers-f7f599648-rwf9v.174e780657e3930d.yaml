@@ -1,23 +1,25 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: default-scheduler
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: calico-kube-controllers-f7f599648-rwf9v.174e780657e3930d
-  namespace: kube-system
-note: '0/1 nodes are available: 1 node(s) had untolerated taint {node.cloudprovider.kubernetes.io/uninitialized:
-  true}. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.'
-reason: FailedScheduling
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: calico-kube-controllers-f7f599648-rwf9v
   namespace: kube-system
   resourceVersion: "507"
   uid: f9335da4-f0ef-421b-8e9f-b71f966dc766
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: '0/1 nodes are available: 1 node(s) had untolerated taint {node.cloudprovider.kubernetes.io/uninitialized:
+  true}. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: calico-kube-controllers-f7f599648-rwf9v.174e780657e3930d
+  namespace: kube-system
+reason: FailedScheduling
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
 type: Warning

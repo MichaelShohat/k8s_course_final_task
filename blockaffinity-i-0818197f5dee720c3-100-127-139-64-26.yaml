@@ -1,0 +1,12 @@
+apiVersion: crd.projectcalico.org/v1
+kind: BlockAffinity
+metadata:
+  annotations:
+    projectcalico.org/metadata: '{"creationTimestamp":null}'
+  creationTimestamp: "2023-03-21T15:15:03Z"
+  name: i-0818197f5dee720c3-100-127-139-64-26
+spec:
+  cidr: 100.127.139.64/26
+  deleted: "false"
+  node: i-0818197f5dee720c3
+  state: confirmed

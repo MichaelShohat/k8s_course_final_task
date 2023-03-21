@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: daemonset-controller
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: kops-controller.174e78064cbc6826
-  namespace: kube-system
-note: 'Created pod: kops-controller-scnz6'
-reason: SuccessfulCreate
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: apps/v1
   kind: DaemonSet
   name: kops-controller
   namespace: kube-system
   resourceVersion: "368"
   uid: 3cfb03eb-f1b2-4be5-a4ce-9cbb68570047
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: 'Created pod: kops-controller-scnz6'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: kops-controller.174e78064cbc6826
+  namespace: kube-system
+reason: SuccessfulCreate
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: daemonset-controller
 type: Normal

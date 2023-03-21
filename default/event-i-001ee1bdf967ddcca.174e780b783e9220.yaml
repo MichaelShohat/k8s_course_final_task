@@ -1,20 +1,22 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:01Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:01Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
+firstTimestamp: "2023-03-21T15:15:01Z"
+involvedObject:
+  kind: Node
+  name: i-001ee1bdf967ddcca
+  uid: i-001ee1bdf967ddcca
 kind: Event
+lastTimestamp: "2023-03-21T15:15:01Z"
+message: Starting kubelet.
 metadata:
   creationTimestamp: "2023-03-21T15:15:11Z"
   name: i-001ee1bdf967ddcca.174e780b783e9220
   namespace: default
-note: Starting kubelet.
 reason: Starting
-regarding:
-  kind: Node
-  name: i-001ee1bdf967ddcca
-  uid: i-001ee1bdf967ddcca
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

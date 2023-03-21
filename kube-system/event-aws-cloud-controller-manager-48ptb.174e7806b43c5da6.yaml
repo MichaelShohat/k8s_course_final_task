@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:41Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:41Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:41Z"
-  name: aws-cloud-controller-manager-48ptb.174e7806b43c5da6
-  namespace: kube-system
-note: Pulling image "registry.k8s.io/provider-aws/cloud-controller-manager:v1.25.0@sha256:d12285173cb301d08ce1a56256782478ec2ec334f3af345b9f753b8de2598aad"
-reason: Pulling
-regarding:
+firstTimestamp: "2023-03-21T15:14:41Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{aws-cloud-controller-manager}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: kube-system
   resourceVersion: "530"
   uid: 63522ce2-2b2c-49b7-a8d5-6bd911d71f12
+kind: Event
+lastTimestamp: "2023-03-21T15:14:41Z"
+message: Pulling image "registry.k8s.io/provider-aws/cloud-controller-manager:v1.25.0@sha256:d12285173cb301d08ce1a56256782478ec2ec334f3af345b9f753b8de2598aad"
+metadata:
+  creationTimestamp: "2023-03-21T15:14:41Z"
+  name: aws-cloud-controller-manager-48ptb.174e7806b43c5da6
+  namespace: kube-system
+reason: Pulling
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

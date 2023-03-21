@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:14Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:14Z"
-deprecatedSource:
-  component: external-attacher-leader-ebs.csi.aws.com/ebs-csi-controller-5786cf97ff-zcp65
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:15:14Z"
-  name: external-attacher-leader-ebs-csi-aws-com.174e780e821341cb
-  namespace: kube-system
-note: ebs-csi-controller-5786cf97ff-zcp65 became leader
-reason: LeaderElection
-regarding:
+firstTimestamp: "2023-03-21T15:15:14Z"
+involvedObject:
   apiVersion: coordination.k8s.io/v1
   kind: Lease
   name: external-attacher-leader-ebs-csi-aws-com
   namespace: kube-system
   resourceVersion: "708"
   uid: 756e7a8c-4bd7-4102-a36c-308401c09802
+kind: Event
+lastTimestamp: "2023-03-21T15:15:14Z"
+message: ebs-csi-controller-5786cf97ff-zcp65 became leader
+metadata:
+  creationTimestamp: "2023-03-21T15:15:14Z"
+  name: external-attacher-leader-ebs-csi-aws-com.174e780e821341cb
+  namespace: kube-system
+reason: LeaderElection
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: external-attacher-leader-ebs.csi.aws.com/ebs-csi-controller-5786cf97ff-zcp65
 type: Normal

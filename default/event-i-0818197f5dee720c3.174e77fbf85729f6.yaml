@@ -1,19 +1,19 @@
 action: StartKubeProxy
-apiVersion: events.k8s.io/v1
-deprecatedFirstTimestamp: null
-deprecatedLastTimestamp: null
-deprecatedSource: {}
+apiVersion: v1
 eventTime: "2023-03-21T15:13:55.142731Z"
+firstTimestamp: null
+involvedObject:
+  kind: Node
+  name: i-0818197f5dee720c3
+  uid: i-0818197f5dee720c3
 kind: Event
+lastTimestamp: null
 metadata:
   creationTimestamp: "2023-03-21T15:13:55Z"
   name: i-0818197f5dee720c3.174e77fbf85729f6
   namespace: default
 reason: Starting
-regarding:
-  kind: Node
-  name: i-0818197f5dee720c3
-  uid: i-0818197f5dee720c3
-reportingController: kube-proxy
+reportingComponent: kube-proxy
 reportingInstance: kube-proxy-ip-172-31-9-138
+source: {}
 type: Normal

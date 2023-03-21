@@ -1,19 +1,8 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:49:14Z"
-deprecatedLastTimestamp: "2023-03-21T15:49:14Z"
-deprecatedSource:
-  component: kubelet
-  host: i-001ee1bdf967ddcca
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:49:14Z"
-  name: nginx-deployment-7fb96c846b-gds8c.174e79e97166e369
-  namespace: hackathon-prod
-note: Successfully pulled image "nginx:1.14.2" in 5.15905355s
-reason: Pulled
-regarding:
+firstTimestamp: "2023-03-21T15:49:14Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{nginx}
   kind: Pod
@@ -21,4 +10,17 @@ regarding:
   namespace: hackathon-prod
   resourceVersion: "6290"
   uid: f3853d5a-6c1b-450b-a82e-49a61079bca1
+kind: Event
+lastTimestamp: "2023-03-21T15:49:14Z"
+message: Successfully pulled image "nginx:1.14.2" in 5.15905355s
+metadata:
+  creationTimestamp: "2023-03-21T15:49:14Z"
+  name: nginx-deployment-7fb96c846b-gds8c.174e79e97166e369
+  namespace: hackathon-prod
+reason: Pulled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
 type: Normal

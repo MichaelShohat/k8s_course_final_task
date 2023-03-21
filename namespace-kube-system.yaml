@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    addons.k8s.io/aws-cloud-controller.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.18","manifestHash":"ddeab662660faa0e4bcd19cad171889fafedb21578dc6fe5939c1204c540f46c","systemGeneration":1}'
+    addons.k8s.io/aws-ebs-csi-driver.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.17","manifestHash":"5ffa631a703693ce878849b92c7f7d4fa16120bfddc7f4f5113897616c281daf","systemGeneration":1}'
+    addons.k8s.io/coredns.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.12","manifestHash":"e74407f12bb4589901fc6e1785395747588ba2e8788ffbca664d88c4c8da58e5","systemGeneration":1}'
+    addons.k8s.io/dns-controller.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.12","manifestHash":"769f1ed6094ca929e93a7d727477885ccbcb10433cdb5089b76ce55ccadd6a7e","systemGeneration":1}'
+    addons.k8s.io/kops-controller.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.16","manifestHash":"821a8be1c6c8dfc23d1484386744a439bb429533a0c5100fd8ed55e34a158335","systemGeneration":1}'
+    addons.k8s.io/kubelet-api.rbac.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.9","manifestHash":"01c120e887bd98d82ef57983ad58a0b22bc85efb48108092a24c4b82e4c9ea81","systemGeneration":1}'
+    addons.k8s.io/leader-migration.rbac.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.23","manifestHash":"b9c91e09c0f28c9b74ff140b8395d611834c627d698846d625c10975a74a48c4","systemGeneration":1}'
+    addons.k8s.io/limit-range.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","manifestHash":"2d55c3bc5e354e84a3730a65b42f39aba630a59dc8d32b30859fcce3d3178bc2","systemGeneration":1}'
+    addons.k8s.io/networking.projectcalico.org: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"k8s-1.25","manifestHash":"a3d712db23f74a4313682e8ff77b2bd1fa58568526507291f8cbfa694efe6995","systemGeneration":1}'
+    addons.k8s.io/storage-aws.addons.k8s.io: '{"channel":"s3://jb-tfstate/newstuffa-8.jb.io/addons/bootstrap-channel.yaml","id":"v1.15.0","manifestHash":"4e2cda50cd5048133aad1b5e28becb60f4629d3f9e09c514a2757c27998b4200","systemGeneration":1}'
+  creationTimestamp: "2023-03-21T15:13:51Z"
+  labels:
+    kubernetes.io/metadata.name: kube-system
+  name: kube-system
+spec:
+  finalizers:
+  - kubernetes

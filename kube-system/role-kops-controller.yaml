@@ -1,0 +1,43 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: "2023-03-21T15:14:05Z"
+  labels:
+    addon.kops.k8s.io/name: kops-controller.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: kops-controller.addons.k8s.io
+  name: kops-controller
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+- apiGroups:
+  - ""
+  - coordination.k8s.io
+  resourceNames:
+  - kops-controller-leader
+  resources:
+  - configmaps
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - patch
+  - update
+  - delete
+- apiGroups:
+  - ""
+  - coordination.k8s.io
+  resources:
+  - configmaps
+  - leases
+  verbs:
+  - create

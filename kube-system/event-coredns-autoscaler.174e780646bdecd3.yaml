@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: deployment-controller
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: coredns-autoscaler.174e780646bdecd3
-  namespace: kube-system
-note: Scaled up replica set coredns-autoscaler-975545559 to 1
-reason: ScalingReplicaSet
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: apps/v1
   kind: Deployment
   name: coredns-autoscaler
   namespace: kube-system
   resourceVersion: "212"
   uid: 2c057fa4-2b12-48af-a57e-508fb4cbc635
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: Scaled up replica set coredns-autoscaler-975545559 to 1
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: coredns-autoscaler.174e780646bdecd3
+  namespace: kube-system
+reason: ScalingReplicaSet
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: deployment-controller
 type: Normal

@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:14:39Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:39Z"
-deprecatedSource:
-  component: daemonset-controller
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:14:39Z"
-  name: ebs-csi-node.174e78064df05887
-  namespace: kube-system
-note: 'Created pod: ebs-csi-node-fjqwq'
-reason: SuccessfulCreate
-regarding:
+firstTimestamp: "2023-03-21T15:14:39Z"
+involvedObject:
   apiVersion: apps/v1
   kind: DaemonSet
   name: ebs-csi-node
   namespace: kube-system
   resourceVersion: "353"
   uid: aafa89be-3098-4715-9d39-58b561417340
+kind: Event
+lastTimestamp: "2023-03-21T15:14:39Z"
+message: 'Created pod: ebs-csi-node-fjqwq'
+metadata:
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  name: ebs-csi-node.174e78064df05887
+  namespace: kube-system
+reason: SuccessfulCreate
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: daemonset-controller
 type: Normal

@@ -1,0 +1,101 @@
+apiVersion: apps/v1
+data:
+  spec:
+    template:
+      $patch: replace
+      metadata:
+        annotations:
+          dns.alpha.kubernetes.io/internal: kops-controller.internal.newstuffa-8.jb.io
+        creationTimestamp: null
+        labels:
+          k8s-addon: kops-controller.addons.k8s.io
+          k8s-app: kops-controller
+          kops.k8s.io/managed-by: kops
+          version: v1.25.0
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: node-role.kubernetes.io/control-plane
+                  operator: Exists
+                - key: kops.k8s.io/kops-controller-pki
+                  operator: Exists
+              - matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: Exists
+                - key: kops.k8s.io/kops-controller-pki
+                  operator: Exists
+        containers:
+        - args:
+          - --v=2
+          - --conf=/etc/kubernetes/kops-controller/config/config.yaml
+          env:
+          - name: KUBERNETES_SERVICE_HOST
+            value: 127.0.0.1
+          image: registry.k8s.io/kops/kops-controller:1.25.0@sha256:ffca50fd02426835e9b3c51d950e0726774de27934d944457a0391d8ba64a5e6
+          imagePullPolicy: IfNotPresent
+          name: kops-controller
+          resources:
+            requests:
+              cpu: 50m
+              memory: 50Mi
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10011
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /etc/kubernetes/kops-controller/config/
+            name: kops-controller-config
+          - mountPath: /etc/kubernetes/kops-controller/pki/
+            name: kops-controller-pki
+        dnsPolicy: Default
+        hostNetwork: true
+        priorityClassName: system-cluster-critical
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: kops-controller
+        serviceAccountName: kops-controller
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - key: node.cloudprovider.kubernetes.io/uninitialized
+          operator: Exists
+        - key: node.kubernetes.io/not-ready
+          operator: Exists
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+        volumes:
+        - configMap:
+            defaultMode: 420
+            name: kops-controller
+          name: kops-controller-config
+        - hostPath:
+            path: /etc/kubernetes/kops-controller/
+            type: Directory
+          name: kops-controller-pki
+kind: ControllerRevision
+metadata:
+  annotations:
+    deprecated.daemonset.template.generation: "1"
+  creationTimestamp: "2023-03-21T15:14:39Z"
+  labels:
+    controller-revision-hash: 758d7bd4fd
+    k8s-addon: kops-controller.addons.k8s.io
+    k8s-app: kops-controller
+    kops.k8s.io/managed-by: kops
+    version: v1.25.0
+  name: kops-controller-758d7bd4fd
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: DaemonSet
+    name: kops-controller
+    uid: 3cfb03eb-f1b2-4be5-a4ce-9cbb68570047
+revision: 1

@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:50:59Z"
-deprecatedLastTimestamp: "2023-03-21T15:50:59Z"
-deprecatedSource:
-  component: ebs.csi.aws.com_ebs-csi-controller-5786cf97ff-zcp65_4742e7cf-4902-48b6-937a-b8857bac5ebd
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:50:59Z"
-  name: kube-backups-katafygio.174e7a01e30c8b19
-  namespace: default
-note: External provisioner is provisioning volume for claim "default/kube-backups-katafygio"
-reason: Provisioning
-regarding:
+firstTimestamp: "2023-03-21T15:50:59Z"
+involvedObject:
   apiVersion: v1
   kind: PersistentVolumeClaim
   name: kube-backups-katafygio
   namespace: default
   resourceVersion: "6628"
   uid: e50cd140-e568-4ce9-863f-04d7249784b8
+kind: Event
+lastTimestamp: "2023-03-21T15:50:59Z"
+message: External provisioner is provisioning volume for claim "default/kube-backups-katafygio"
+metadata:
+  creationTimestamp: "2023-03-21T15:50:59Z"
+  name: kube-backups-katafygio.174e7a01e30c8b19
+  namespace: default
+reason: Provisioning
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: ebs.csi.aws.com_ebs-csi-controller-5786cf97ff-zcp65_4742e7cf-4902-48b6-937a-b8857bac5ebd
 type: Normal

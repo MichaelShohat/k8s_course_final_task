@@ -1,23 +1,25 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 7
-deprecatedFirstTimestamp: "2023-03-21T15:13:16Z"
-deprecatedLastTimestamp: "2023-03-21T15:14:09Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 7
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:13:59Z"
-  name: kube-controller-manager-i-0818197f5dee720c3.174e77f306e2fd07
-  namespace: kube-system
-note: Back-off restarting failed container
-reason: BackOff
-regarding:
+firstTimestamp: "2023-03-21T15:13:16Z"
+involvedObject:
   apiVersion: v1
   fieldPath: spec.containers{kube-controller-manager}
   kind: Pod
   name: kube-controller-manager-i-0818197f5dee720c3
   namespace: kube-system
   uid: 580706aa3c92133d8466ed9dd640ea40
+kind: Event
+lastTimestamp: "2023-03-21T15:14:09Z"
+message: Back-off restarting failed container
+metadata:
+  creationTimestamp: "2023-03-21T15:13:59Z"
+  name: kube-controller-manager-i-0818197f5dee720c3.174e77f306e2fd07
+  namespace: kube-system
+reason: BackOff
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Warning

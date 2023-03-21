@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:15:12Z"
-deprecatedLastTimestamp: "2023-03-21T15:15:12Z"
-deprecatedSource:
-  component: default-scheduler
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:15:12Z"
-  name: calico-node-hgbbz.174e780de730d27d
-  namespace: kube-system
-note: Successfully assigned kube-system/calico-node-hgbbz to i-001ee1bdf967ddcca
-reason: Scheduled
-regarding:
+firstTimestamp: "2023-03-21T15:15:12Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: calico-node-hgbbz
   namespace: kube-system
   resourceVersion: "681"
   uid: c6cb944c-db27-49ed-b86d-cb046a7431b4
+kind: Event
+lastTimestamp: "2023-03-21T15:15:12Z"
+message: Successfully assigned kube-system/calico-node-hgbbz to i-001ee1bdf967ddcca
+metadata:
+  creationTimestamp: "2023-03-21T15:15:12Z"
+  name: calico-node-hgbbz.174e780de730d27d
+  namespace: kube-system
+reason: Scheduled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
 type: Normal

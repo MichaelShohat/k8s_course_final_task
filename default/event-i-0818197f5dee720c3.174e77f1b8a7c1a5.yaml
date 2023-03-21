@@ -1,20 +1,22 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 8
-deprecatedFirstTimestamp: "2023-03-21T15:13:11Z"
-deprecatedLastTimestamp: "2023-03-21T15:13:11Z"
-deprecatedSource:
-  component: kubelet
-  host: i-0818197f5dee720c3
+apiVersion: v1
+count: 8
 eventTime: null
+firstTimestamp: "2023-03-21T15:13:11Z"
+involvedObject:
+  kind: Node
+  name: i-0818197f5dee720c3
+  uid: i-0818197f5dee720c3
 kind: Event
+lastTimestamp: "2023-03-21T15:13:11Z"
+message: 'Node i-0818197f5dee720c3 status is now: NodeHasSufficientMemory'
 metadata:
   creationTimestamp: "2023-03-21T15:13:53Z"
   name: i-0818197f5dee720c3.174e77f1b8a7c1a5
   namespace: default
-note: 'Node i-0818197f5dee720c3 status is now: NodeHasSufficientMemory'
 reason: NodeHasSufficientMemory
-regarding:
-  kind: Node
-  name: i-0818197f5dee720c3
-  uid: i-0818197f5dee720c3
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: kubelet
+  host: i-0818197f5dee720c3
 type: Normal

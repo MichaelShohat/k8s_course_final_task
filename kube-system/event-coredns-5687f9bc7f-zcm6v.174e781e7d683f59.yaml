@@ -1,22 +1,24 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2023-03-21T15:16:23Z"
-deprecatedLastTimestamp: "2023-03-21T15:16:23Z"
-deprecatedSource:
-  component: default-scheduler
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2023-03-21T15:16:23Z"
-  name: coredns-5687f9bc7f-zcm6v.174e781e7d683f59
-  namespace: kube-system
-note: Successfully assigned kube-system/coredns-5687f9bc7f-zcm6v to i-001ee1bdf967ddcca
-reason: Scheduled
-regarding:
+firstTimestamp: "2023-03-21T15:16:23Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: coredns-5687f9bc7f-zcm6v
   namespace: kube-system
   resourceVersion: "943"
   uid: 9216a862-d717-43f2-8d69-daaf15194de9
+kind: Event
+lastTimestamp: "2023-03-21T15:16:23Z"
+message: Successfully assigned kube-system/coredns-5687f9bc7f-zcm6v to i-001ee1bdf967ddcca
+metadata:
+  creationTimestamp: "2023-03-21T15:16:23Z"
+  name: coredns-5687f9bc7f-zcm6v.174e781e7d683f59
+  namespace: kube-system
+reason: Scheduled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
 type: Normal
