@@ -26,7 +26,7 @@ spec:
   - null
   - null
   - null
-  - null
+  - 8
   - null
   - null
   - null
@@ -119,9 +119,15 @@ spec:
       node: i-001ee1bdf967ddcca
       pod: nginx-deployment-7fb96c846b-gds8c
       timestamp: 2023-03-21 15:49:09.049419865 +0000 UTC
+  - handle_id: k8s-pod-network.71104a95a61ad7761192fd9ea8adb44a69c175a10c6d622c1ab571dc944ba369
+    secondary:
+      namespace: default
+      node: i-001ee1bdf967ddcca
+      pod: kube-backups-katafygio-5b77fc7d67-ltc8s
+      timestamp: 2023-03-21 16:35:50.662525439 +0000 UTC
   cidr: 100.113.130.64/26
   deleted: false
-  sequenceNumber: 1679411769556053910
+  sequenceNumber: 1679411769556053911
   sequenceNumberForAllocation:
     "0": 1679411769556053882
     "1": 1679411769556053883
@@ -141,9 +147,9 @@ spec:
     "15": 1679411769556053904
     "16": 1679411769556053906
     "17": 1679411769556053908
+    "18": 1679411769556053910
   strictAffinity: false
   unallocated:
-  - 18
   - 19
   - 20
   - 21
