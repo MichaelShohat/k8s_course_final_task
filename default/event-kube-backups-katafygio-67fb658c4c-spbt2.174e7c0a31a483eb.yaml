@@ -1,0 +1,24 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 13
+deprecatedFirstTimestamp: "2023-03-21T16:28:14Z"
+deprecatedLastTimestamp: "2023-03-21T16:29:39Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:28:14Z"
+  name: kube-backups-katafygio-67fb658c4c-spbt2.174e7c0a31a483eb
+  namespace: default
+note: Back-off restarting failed container
+reason: BackOff
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{katafygio}
+  kind: Pod
+  name: kube-backups-katafygio-67fb658c4c-spbt2
+  namespace: default
+  resourceVersion: "13178"
+  uid: fdde06c9-c451-49c8-bce6-1ada4b7161e2
+type: Warning

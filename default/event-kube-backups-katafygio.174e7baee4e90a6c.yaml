@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:21:42Z"
+deprecatedLastTimestamp: "2023-03-21T16:21:42Z"
+deprecatedSource:
+  component: ebs.csi.aws.com_ebs-csi-controller-5786cf97ff-zcp65_4742e7cf-4902-48b6-937a-b8857bac5ebd
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:21:42Z"
+  name: kube-backups-katafygio.174e7baee4e90a6c
+  namespace: default
+note: Successfully provisioned volume pvc-14b0332c-5ba5-46a9-8f9f-c3157cffeb9f
+reason: ProvisioningSucceeded
+regarding:
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  name: kube-backups-katafygio
+  namespace: default
+  resourceVersion: "11989"
+  uid: 14b0332c-5ba5-46a9-8f9f-c3157cffeb9f
+type: Normal

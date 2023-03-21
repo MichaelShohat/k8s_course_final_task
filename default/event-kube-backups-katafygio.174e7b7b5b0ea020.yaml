@@ -1,0 +1,23 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:18:00Z"
+deprecatedLastTimestamp: "2023-03-21T16:18:00Z"
+deprecatedSource:
+  component: persistentvolume-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:18:00Z"
+  name: kube-backups-katafygio.174e7b7b5b0ea020
+  namespace: default
+note: waiting for a volume to be created, either by external provisioner "ebs.csi.aws.com"
+  or manually created by system administrator
+reason: ExternalProvisioning
+regarding:
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  name: kube-backups-katafygio
+  namespace: default
+  resourceVersion: "11279"
+  uid: 5fb52e01-e45d-4302-ab2d-3d704d8907ca
+type: Normal

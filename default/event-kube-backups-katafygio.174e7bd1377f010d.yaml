@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:24:09Z"
+deprecatedLastTimestamp: "2023-03-21T16:24:09Z"
+deprecatedSource:
+  component: persistentvolume-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:24:09Z"
+  name: kube-backups-katafygio.174e7bd1377f010d
+  namespace: default
+note: waiting for first consumer to be created before binding
+reason: WaitForFirstConsumer
+regarding:
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  name: kube-backups-katafygio
+  namespace: default
+  resourceVersion: "12451"
+  uid: 7d905a07-7f63-4c8f-b3b3-d43147e44589
+type: Normal

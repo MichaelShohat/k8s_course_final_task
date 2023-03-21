@@ -1,0 +1,25 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:15:05Z"
+deprecatedLastTimestamp: "2023-03-21T16:15:05Z"
+deprecatedSource:
+  component: kubelet
+  host: i-001ee1bdf967ddcca
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:15:05Z"
+  name: kube-backups-katafygio-7cbfdd6b4f-jvsmb.174e7b52a1971742
+  namespace: default
+note: 'Readiness probe failed: Get "http://100.113.130.74:8080/health": dial tcp 100.113.130.74:8080:
+  connect: connection refused'
+reason: Unhealthy
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{katafygio}
+  kind: Pod
+  name: kube-backups-katafygio-7cbfdd6b4f-jvsmb
+  namespace: default
+  resourceVersion: "10478"
+  uid: f174ffe1-e6d8-498a-883e-e878366aeccd
+type: Warning

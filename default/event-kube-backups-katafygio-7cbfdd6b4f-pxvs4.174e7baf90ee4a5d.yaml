@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:21:45Z"
+deprecatedLastTimestamp: "2023-03-21T16:21:45Z"
+deprecatedSource:
+  component: attachdetach-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:21:45Z"
+  name: kube-backups-katafygio-7cbfdd6b4f-pxvs4.174e7baf90ee4a5d
+  namespace: default
+note: 'AttachVolume.Attach succeeded for volume "pvc-14b0332c-5ba5-46a9-8f9f-c3157cffeb9f" '
+reason: SuccessfulAttachVolume
+regarding:
+  apiVersion: v1
+  kind: Pod
+  name: kube-backups-katafygio-7cbfdd6b4f-pxvs4
+  namespace: default
+  resourceVersion: "12006"
+  uid: 54e93696-8c9c-4519-b06b-abe4c00d7c13
+type: Normal

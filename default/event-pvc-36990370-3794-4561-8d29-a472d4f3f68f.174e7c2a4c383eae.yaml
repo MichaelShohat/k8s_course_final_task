@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 4
+deprecatedFirstTimestamp: "2023-03-21T16:30:32Z"
+deprecatedLastTimestamp: "2023-03-21T16:30:39Z"
+deprecatedSource:
+  component: ebs.csi.aws.com_ebs-csi-controller-5786cf97ff-zcp65_4742e7cf-4902-48b6-937a-b8857bac5ebd
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:30:32Z"
+  name: pvc-36990370-3794-4561-8d29-a472d4f3f68f.174e7c2a4c383eae
+  namespace: default
+note: persistentvolume pvc-36990370-3794-4561-8d29-a472d4f3f68f is still attached
+  to node i-001ee1bdf967ddcca
+reason: VolumeFailedDelete
+regarding:
+  apiVersion: v1
+  kind: PersistentVolume
+  name: pvc-36990370-3794-4561-8d29-a472d4f3f68f
+  resourceVersion: "13598"
+  uid: cc7e8a8c-3727-41d2-a02d-10e7b44ae1ed
+type: Warning

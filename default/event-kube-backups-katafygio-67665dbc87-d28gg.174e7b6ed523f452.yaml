@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:17:07Z"
+deprecatedLastTimestamp: "2023-03-21T16:17:07Z"
+deprecatedSource:
+  component: default-scheduler
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:17:07Z"
+  name: kube-backups-katafygio-67665dbc87-d28gg.174e7b6ed523f452
+  namespace: default
+note: Successfully assigned default/kube-backups-katafygio-67665dbc87-d28gg to i-001ee1bdf967ddcca
+reason: Scheduled
+regarding:
+  apiVersion: v1
+  kind: Pod
+  name: kube-backups-katafygio-67665dbc87-d28gg
+  namespace: default
+  resourceVersion: "11058"
+  uid: 5b56e7db-94bf-4c4f-bc4b-b49346bb3c31
+type: Normal

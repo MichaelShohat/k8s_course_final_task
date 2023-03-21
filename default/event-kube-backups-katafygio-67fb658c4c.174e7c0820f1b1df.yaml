@@ -1,0 +1,22 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2023-03-21T16:28:05Z"
+deprecatedLastTimestamp: "2023-03-21T16:28:05Z"
+deprecatedSource:
+  component: replicaset-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2023-03-21T16:28:05Z"
+  name: kube-backups-katafygio-67fb658c4c.174e7c0820f1b1df
+  namespace: default
+note: 'Created pod: kube-backups-katafygio-67fb658c4c-spbt2'
+reason: SuccessfulCreate
+regarding:
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  name: kube-backups-katafygio-67fb658c4c
+  namespace: default
+  resourceVersion: "13155"
+  uid: 15186443-25f9-4c7c-913d-2aa46769d589
+type: Normal
