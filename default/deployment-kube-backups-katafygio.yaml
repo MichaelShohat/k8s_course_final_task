@@ -5,7 +5,7 @@ metadata:
     deployment.kubernetes.io/revision: "1"
     meta.helm.sh/release-name: kube-backups
     meta.helm.sh/release-namespace: default
-  creationTimestamp: "2023-03-21T16:55:43Z"
+  creationTimestamp: "2023-03-21T17:15:22Z"
   labels:
     app: katafygio
     app.kubernetes.io/managed-by: Helm
@@ -37,7 +37,7 @@ spec:
       - args:
         - --local-dir=/var/lib/katafygio/data
         - --healthcheck-port=8080
-        - --git-url=https://MichaelShohat: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@github.com/MichaelShohat/k8s_course_final_task.git
+        - --git-url=https://MichaelShohat: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@github.com/MichaelShohat/k8s_course_final_task.git
         - --log-level=info
         - --log-output=stdout
         - --resync-interval=300

@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 0d92447c2bcf2d4db0af9d162bfa5a8361b2fc3555379392ed84ed59ea5a184c
+    cni.projectcalico.org/podIP: 100.113.130.89/32
+    cni.projectcalico.org/podIPs: 100.113.130.89/32
+    kubernetes.io/limit-ranger: 'LimitRanger plugin set: cpu request for container
+      katafygio'
+  creationTimestamp: "2023-03-21T17:15:22Z"
+  generateName: kube-backups-katafygio-7db9977bd9-
+  labels:
+    app: katafygio
+    chart: katafygio-0.5.1
+    heritage: Helm
+    pod-template-hash: 7db9977bd9
+    release: kube-backups
+  name: kube-backups-katafygio-7db9977bd9-cr62m
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: kube-backups-katafygio-7db9977bd9
+    uid: 00eb8f5c-f2f5-4ecc-b12c-726c424aa9f0
+spec:
+  containers:
+  - args:
+    - --local-dir=/var/lib/katafygio/data
+    - --healthcheck-port=8080
+    - --git-url=https://MichaelShohat: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@github.com/MichaelShohat/k8s_course_final_task.git
+    - --log-level=info
+    - --log-output=stdout
+    - --resync-interval=300
+    - --exclude-kind=replicasets
+    - --exclude-kind=endpoints
+    - --exclude-kind=events
+    image: bpineau/katafygio:v0.8.3
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+        scheme: HTTP
+      initialDelaySeconds: 60
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 10
+    name: katafygio
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+        scheme: HTTP
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 10
+    resources:
+      requests:
+        cpu: 100m
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/katafygio/data
+      name: kube-backups-katafygio-data
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-khsrr
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: i-001ee1bdf967ddcca
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 65534
+  serviceAccount: kube-backups-katafygio
+  serviceAccountName: kube-backups-katafygio
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - emptyDir: {}
+    name: kube-backups-katafygio-data
+  - name: kube-api-access-khsrr
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
