@@ -9,4 +9,4 @@ spec:
   holderIdentity: ip-172-31-9-138_5fee98b9-ae9a-48e9-8e7b-a1059052a5d9
   leaseDurationSeconds: 15
   leaseTransitions: 0
-  renewTime: "2023-03-21T16:33:57.252062Z"
+  renewTime: "2023-03-21T16:34:07.298781Z"
